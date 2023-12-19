@@ -55,3 +55,56 @@ But many algorithms can be used for both depending how you represent your proble
 **Architecture of Neural Network**
 
 ![alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Achitecture%20of%20neural%20network.jpg)
+
+## Learning Paradigms of Neural Network
+
+**1. Supervised Learning** <br>
+have data and label <br>
+**2. Unsupervised & Self-supervised Learning**
+- **Unsupervised Learning:**<br>
+**Definition**:<br>
+ In unsupervised learning, the algorithm is provided with input data that has no corresponding output labels. The algorithm tries to find patterns, structures, or relationships within the data without explicit guidance.<br>
+**Goal:**<br>
+The primary goal of unsupervised learning is to discover the inherent structure of the data. Common tasks include clustering, dimensionality reduction, and density estimation.<br>
+**Examples:**<br>
+  - Clustering: Grouping similar data points together.<br>
+  - Dimensionality Reduction: Reducing the number of features while preserving relevant information.<br>
+
+- **Self-supervised:** <br>
+**Definition**:<br>
+Self-supervised learning is a specific type of unsupervised learning where the algorithm generates its own supervision signal from the input data. It creates a pretext task by defining relationships within the data, and the model learns to solve this task without external labels.<br>
+**Goal:** <br> 
+The primary goal of self-supervised learning is to learn useful representations of the data. The pretext task is designed to capture meaningful features that can be transferred to other downstream tasks.<br>
+**Examples:** <br>
+  - Word Embeddings: Predicting missing words in a sentence.
+  - Image Inpainting: Reconstructing missing parts of an image.
+  - Temporal Order Prediction: Determining the correct temporal order of shuffled input sequences.<br>
+  
+**3. Transfer Learning**
+The algorithm taking pattern that learn in one model over the dataset and **transfering** it to another model
+
+## What is deep learning actually used for ?
+
+**Some deep learning use case**
+- Recommendation system
+- Translation (sequence to sequence: seq2seq)
+- Speech Recognition (sequence to sequence: seq2seq)
+- Computer Vision (Classification/Regression)
+- Natural Language Processing (NLP) e.g. Spam/Not Spam classifier (Classification/Regression)
+
+## What is Pytorch ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
