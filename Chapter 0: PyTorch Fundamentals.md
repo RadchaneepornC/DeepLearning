@@ -50,4 +50,8 @@ But many algorithms can be used for both depending how you represent your proble
 3. then Neural Network learn representation (pattern, features, weights) from the input data
 4. got the representation outputs that human can understand
 
-![image] ()
+![alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Neural%20Network.png)
+
+**Architecture of Neural Network**
+
+![alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Achitecture%20of%20neural%20network.jpg)
