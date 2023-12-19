@@ -93,9 +93,20 @@ The algorithm taking pattern that learn in one model over the dataset and **tran
 - Natural Language Processing (NLP) e.g. Spam/Not Spam classifier (Classification/Regression)
 
 ## What is Pytorch ?
+- Most popular python deep learning framework allow you to write fast deep learning python code accelerate by GPU
+- Able to access many pre-built deep learning models (Torch Hub/torvision.models)
+- Whole stack of Machine Learning: prepocess data, model data, deploy model in your application/cloud
+- Originally designed and used in-house by Facebook/Meta (now open-source and used by companies such as Tesla, Microsoft, OpenAI
 
+## What is a GPU/TPU
+- **GPU (Graphics Processing Unit)**: orginally design for video games
+  - Pytorch enables you to leverage cuda to enable us to run our machine learning code on nvidia gpus
+    - CUDA is stand for **C**ompute **U**nified **D**evice **A**rchitecture. It's a technology developed by NVIDIA that allows your computer's graphics processing unit (GPU) to be used for more than just creating cool graphics in video games  
+    - CUDA lets programmers use the power of the GPU for other tasks too, not just graphics. It's like unlocking the super abilities of the GPU to help with all kinds of computations, making certain tasks run much faster and more efficiently. This is particularly useful for things like scientific simulations, artificial intelligence, and other complex calculations
+  
+- **TPU (Tensor Processing Unit):**
 
-
+## What is tensor ?
 
 
 
