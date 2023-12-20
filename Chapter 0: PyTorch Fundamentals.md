@@ -16,17 +16,17 @@
 
 - Problems with long lists of rules:  when the traditional approach fails, machine learning/deep learning may help
 - Continually changing environments: deep learning can adapt ('learn') to new scenarios
-- Discovering insighr with large collections of data: it is may not easy if we trying to hand-craft rules for diffenrentiating what 101 different kinds of food
+- Discovering insight with large collections of data: it is may not easy if we trying to hand-craft rules for diffenrentiating what 101 different kinds of food
   
 **What deep learnign is not good for**
 - When we need to explain the patterns since the patterns learned by a deep learnign model are typically uninterpretable by a human, it has a lot of numbers called weight and bias, has million, billion ofparameters(numbers or patterns in the data)
 - When the traditional approach is a better option such as a simple rule-based system
-- when errors are unacceptable since the outputs of deep learning model aren't always predictable
-- when you don't have much data: deep learning models usually require a fairly large amount of data to produce great result
+- When errors are unacceptable since the outputs of deep learning model aren't always predictable
+- When you don't have much data: deep learning models usually require a fairly large amount of data to produce great result
 
 ## Machine Learning VS Deep Learning
 **Machine learning** is suit for structured data (table of data) while **Deep Learning** is suit for unstructured data (images, text, voice)
-for deep learning you need to turn unstructure data to have some sort of structure through a beauty of a tensor
+for deep learning we need to turn unstructure data to have some sort of structure through a beauty of a tensor
 
 **Algorithm for Machine Learning (structure data)**
 - Random forest
@@ -42,12 +42,12 @@ for deep learning you need to turn unstructure data to have some sort of structu
 - Recurrent neural network
 - Transformer
 
-But many algorithms can be used for both depending how you represent your problem
+But many algorithms can be used for both depending how we represent our problem
 
 ## Neural Network and its Anatomy
 1. before unstructured data gets used with a neural network, it needs to be turned into numbers (numerical encoding or representation)
-2. then pass things through neural network (should a type that suit you problem, CNN for image, transformer for NLP, Speech)
-3. then Neural Network learn representation (pattern, features, weights) from the input data
+2. then pass things through neural network (should a type that suit you problem, CNN for image, transformer for NLP & Speech for example)
+3. then Neural Network learn representations/patterns/features/weights from the input data
 4. got the representation outputs that human can understand
 
 ![alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Neural%20Network.png)
@@ -76,7 +76,7 @@ Self-supervised learning is a specific type of unsupervised learning where the a
 **Goal:** <br> 
 The primary goal of self-supervised learning is to learn useful representations of the data. The pretext task is designed to capture meaningful features that can be transferred to other downstream tasks.<br>
 **Examples:** <br>
-  - Word Embeddings: Predicting missing words in a sentence.
+  - Word Embeddings: Predicting missing words in a sentence, this is used in the step of Large Language Models pretaining which the model is pretrained from unlebel-text but self-supervised techniques can be of help, MLM for encoder only, CLM for decoder only, and sequence to sequence for encoder-decoder  
   - Image Inpainting: Reconstructing missing parts of an image.
   - Temporal Order Prediction: Determining the correct temporal order of shuffled input sequences.<br>
   
@@ -109,6 +109,7 @@ The algorithm taking pattern that learn in one model over the dataset and **tran
 ## What is tensor ?
 
 ![alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Tensors.jpg)
+
 
 
 
