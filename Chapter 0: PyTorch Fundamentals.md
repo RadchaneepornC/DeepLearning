@@ -153,3 +153,8 @@ by identify size of tensor as [colour_channels(red, green, blue), height, width]
 
 ![Image as tensors](https://github.com/RadchaneepornC/DeepLearning/blob/af6b52ba4c0e22f300ee8a2eabd5962a1b34e046/images/Image%20as%20tensors.png)
 
+**Example**
+
+```random_image_size_tensor = torch.rand(size=(224, 224, 3))```
+
+
