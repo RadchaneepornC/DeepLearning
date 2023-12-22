@@ -140,9 +140,16 @@ Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 | MATRIX    |```MATRIX = torch.tensor([[7, 8], [9, 10]])```                |   2       | torch.Size([2, 2])  |              
 | TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number | torch.Size([1, 3, 3])  |
 
-See about tentor dimensions belows
+**To avoid confusion**
+in the context of PyTorch, the dimension of a tensor and the number of channels in a tensor are related but distinct concepts. **The number of channels is typically the size of _the third dimension_ in a tensor**, especially in the context of image data in CNNs. However, a tensor can have more than three dimensions, and each dimension has its own size.
+
+
+See about tensor dimensions belows
 
 ![Tensor Dimensions](https://github.com/RadchaneepornC/DeepLearning/blob/d7d903a15f26b211071bb8bbd32dbff1dc86312f/images/tensor%20dimension%20example.png)
 
+### Represent an image as a tensor with shape
+by identify size of tensor as [colour_channels(red, green, blue), height, width] 
 
+![Image as tensors](https://github.com/RadchaneepornC/DeepLearning/blob/af6b52ba4c0e22f300ee8a2eabd5962a1b34e046/images/Image%20as%20tensors.png)
 
