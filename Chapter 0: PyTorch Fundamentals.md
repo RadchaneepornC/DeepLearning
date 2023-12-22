@@ -121,23 +121,28 @@ torch.Tensor is an alias for the default tensor type torch.FloatTensor (32-bit f
 
 Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 
+| Type  |               Meaning                                                            | 
+| ------| --------------------------------------------------------------------------------                            
+|scalar | a singular number (just magnitude) |    
+|vector | a number with direction            |   
+|MATRIX | a 2-dimensional array of numbers   |     
+|TENSOR | an n-dimensional array of numbers  | 
 
-| Type  | Meaning                          |  Dimensions   |     Size       |    
-| ------| ---------------------------------|-------------  |----------------|
-|       |                                  |```type.ndim```|```type.shape```|
-|scalar | Content Cell                     | Content Cell  | Content Cell   |
-|vector | Content Cell                     | Content Cell | Content Cell    |
-|MATRIX | Content Cell                     | Content Cell | Content Cell    |
-|TENSOR | Content Cell                     | Content Cell | Content Cell    |
+![Tensors](https://github.com/RadchaneepornC/DeepLearning/blob/d7d903a15f26b211071bb8bbd32dbff1dc86312f/images/Tensors.png)
 
-| Type      |        Code                                                  |
-| ----------| -------------------------------------------------------------|
-| scalar    |```scalar = torch.tensor(7)```                                |
-| vector    |```vector = torch.tensor([7,7])```                            |
-| MATRIX    |```MATRIX = torch.tensor([[7, 8], [9, 10]])```                |              
-| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|
+![Tensors](https://github.com/RadchaneepornC/DeepLearning/blob/aee09dcc064c5c6b6bfe227dabfa5c8385f51395/images/Tensors%202.png)
 
+| Type      |        Code                                                                                      |Dimensions   |  Size       |
+| ----------| -------------------------------------------------------------|-----|-------|
+| |  |```type.ndim``` (number of bracket for easy noticing)|```type.shape```(sets of matrix, rows of matrix, columns of matrix)|
+| scalar    |```scalar = torch.tensor(7)```                                |   0       | -  |
+| vector    |```vector = torch.tensor([7,7])```                            |1       | torch.Size([2]) |
+| MATRIX    |```MATRIX = torch.tensor([[7, 8], [9, 10]])```                |   2       | torch.Size([2, 2])  |              
+| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number | torch.Size([1, 3, 3])  |
 
+See about tentor dimensions belows
+
+![Tensor Dimensions](https://github.com/RadchaneepornC/DeepLearning/blob/d7d903a15f26b211071bb8bbd32dbff1dc86312f/images/tensor%20dimension%20example.png)
 
 
 
