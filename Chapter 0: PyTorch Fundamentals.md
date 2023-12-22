@@ -141,7 +141,12 @@ Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 | TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number | torch.Size([1, 3, 3])  |
 
 **To avoid confusion**
-in the context of PyTorch, the dimension of a tensor and the number of channels in a tensor are related but distinct concepts. **The number of channels is typically the size of _the third dimension_ in a tensor**, especially in the context of image data in CNNs. However, a tensor can have more than three dimensions, and each dimension has its own size.
+- in the context of PyTorch, the dimension of a tensor and the number of channels in a tensor are related but distinct concepts. **The number of channels is typically the size of _the third dimension_ in a tensor**, especially in the context of image data in CNNs.
+However, a tensor can have more than three dimensions, and each dimension has its own size.<br>
+
+**(number of channels = size of the third dimension of tensor = number of outmosted bracket)**
+
+- .shape is an attribute of the tensor whereas size() is a function. They both return the same value.
 
 
 See about tensor dimensions belows
@@ -149,7 +154,7 @@ See about tensor dimensions belows
 ![Tensor Dimensions](https://github.com/RadchaneepornC/DeepLearning/blob/d7d903a15f26b211071bb8bbd32dbff1dc86312f/images/tensor%20dimension%20example.png)
 
 ### Represent an image as a tensor with shape
-by identify size of tensor as [colour_channels(red, green, blue), height, width] 
+by identify size of tensor as [height, width, color channels(R,G,B)] 
 
 ![Image as tensors](https://github.com/RadchaneepornC/DeepLearning/blob/af6b52ba4c0e22f300ee8a2eabd5962a1b34e046/images/Image%20as%20tensors.png)
 
@@ -157,4 +162,33 @@ by identify size of tensor as [colour_channels(red, green, blue), height, width]
 
 ```random_image_size_tensor = torch.rand(size=(224, 224, 3))```
 
+## **Random tensors**
+Many neural networks learn things by starting with these following steps:
+1. random number in the tensors with  [torch.rand](https://pytorch.org/docs/stable/generated/torch.rand.html)
+2. look at data
+3. update random numbers
+4. look at data
+5. update random numbers and repeat 2-3 again and again
+
+**Example**
+
+- create a random tensor of size (3,3,4)
+
+```random_tensor = torch.rand(3,3,4)```
+
+
+```tensor([[[0.8392, 0.2026, 0.3443, 0.3889],
+         [0.4184, 0.2061, 0.5102, 0.7971],
+         [0.9066, 0.4758, 0.8494, 0.1696]],
+
+        [[0.2988, 0.3745, 0.1139, 0.7772],
+         [0.9042, 0.8952, 0.4544, 0.4371],
+         [0.5692, 0.0865, 0.8937, 0.6553]],
+
+        [[0.2144, 0.8869, 0.4258, 0.6195],
+         [0.6845, 0.8133, 0.3455, 0.7764],
+         [0.2148, 0.8847, 0.7957, 0.7891]]])```
+  
+
+## **Create a tensor with all zero and one**
 
