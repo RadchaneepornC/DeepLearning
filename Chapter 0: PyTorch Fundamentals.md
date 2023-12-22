@@ -110,14 +110,32 @@ The algorithm taking pattern that learn in one model over the dataset and **tran
 
 ![alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Tensors.jpg)
 
+**Tensor** is a multi-dimensional matrix containing elements of a single data type
+
+Pytorch tensors are created using 
+
+```
+torch.tensor()
+```
+torch.Tensor is an alias for the default tensor type torch.FloatTensor (32-bit floating point for CPU tensor)
+
+Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 
 
+| Type  | Meaning                          |  Dimensions   |     Size       |    
+| ------| ---------------------------------|-------------  |----------------|
+|       |                                  |```type.ndim```|```type.shape```|
+|scalar | Content Cell                     | Content Cell  | Content Cell   |
+|vector | Content Cell                     | Content Cell | Content Cell    |
+|MATRIX | Content Cell                     | Content Cell | Content Cell    |
+|TENSOR | Content Cell                     | Content Cell | Content Cell    |
 
-
-
-
-
-
+| Type      |        Code                                                  |
+| ----------| -------------------------------------------------------------|
+| scalar    |```scalar = torch.tensor(7)```                                |
+| vector    |```vector = torch.tensor([7,7])```                            |
+| MATRIX    |```MATRIX = torch.tensor([[7, 8], [9, 10]])```                |              
+| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|
 
 
 
