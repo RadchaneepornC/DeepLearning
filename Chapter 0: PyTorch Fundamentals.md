@@ -138,8 +138,7 @@ Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 | scalar    |```scalar = torch.tensor(7)```                                |   0       | -  |
 | vector    |```vector = torch.tensor([7,7])```                            |1       | torch.Size([2]) |
 | MATRIX    |```MATRIX = torch.tensor([[7, 8], [9, 10]])```                |   2       | torch.Size([2, 2])  |              
-| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number(if 0-dimension, tensor is a scalar, if 1-dimension, tensor is a vecor
-) | torch.Size([1, 3, 3])  |
+| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number(if 0-dimension, tensor is a scalar,if 1-dimension, tensor is a vecor) | torch.Size([1, 3, 3])  |
 
 **To avoid confusion**
 - in the context of PyTorch, the dimension of a tensor and the number of channels in a tensor are related but distinct concepts. **The number of channels is typically the size of _the third dimension_ in a tensor**, especially in the context of image data in CNNs.
@@ -204,11 +203,13 @@ by identify size of tensor as [height, width, color channels(R,G,B)]
 A [torch.dtype](https://pytorch.org/docs/stable/tensor_attributes.html) is an object that represents the data type of a tensor, Pytorch has 12 different data type 
 
 ### **Create a range of tensor**
-```torch.arange(start, end+1)```
+```torch.arange(start, end+step, step =1)```
 
 ```torch.arange(start = 1, end = 11, step =1)```
 
 ```one_to_ten = torch.arange(1 , 11)```
+
+```zero_to_ninety = torch.arange(0,100,10)``` --> tensor([0, 10, 20, 30, 40, 50, 60, 70, 80, 90])
 
 ### **Create a range of tensor-like**
 tensor_like is use for creating a tensor with the size same as other specufy tensor
@@ -261,9 +262,86 @@ we can set device for specifying what device is our tensor on
 
 For more reading: [Precision in Computing](https://en.wikipedia.org/wiki/Precision_(computer_science))
 
+ **Manipulating Tensor (Tensor Operations)**
+
+For neural network, it has a lot of mathematic operations that Pytorch run behide the scence for us
+**Tensor operations include:**
+- **Addition**
+
+```created_tensor + 10```
+or 
+```torch.add(created_tensor, 10)```
+
+- **Substraction**
+  ```created_tensor - 10```
+
+- **Division** <br>
+
+**This is two main ways of performimg multification in neural networks and deep learning:**
+
+ import numpy as np
+
+**Define the matrices**
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+  
+  - **Multiplication (element-wise)**
 
 
+```created_tensor * 10```
+or 
+```torch.mul(created_tensor, 10)```
 
+element_wise_product = A * B
+
+array([[ 5, 12],
+        [21, 32]])
+
+
+- **Matrix (Dot-product) multiplication**
+dot_product =       
+ array([[19, 22],
+        [43, 50]]))
+
+  ```torch.matmul(tensor,tensor)``` or  ```torch.mm(tensor,tensor)`` or ```tensor @ tensor```
+
+**NOTE**
+The inner dimensions must match so that the matrix multiplication can perform and the resulting matrix has the shape of the outer dimensions
+
+e.g  (2,2) @ (3,2) --> the inner dimension doesn't match, so we can't perform matrix multification
+
+e.g  (2,3) @ (3,2)
+- (2,**3**) @ (**3**,2) --> the inner dimension match, so we can perform matrix multification
+- (**2**,3) @ (3,**2**) --> as per the outer dimentions, the result of Matrix multification will have the shape of (2,2)
+
+to fix our tensor **shape issues**, we can mulnipulate the shape of our tensors using a **transpose**.
+A transpose switches the axes or dimentions of a given tensor: (2,3) to (3,2) for example
+
+```Tensor_name.T```
+
+### **Tensor Aggregation: min, max, mean, sum, etc**
+
+- ```find_min = torch.min(x)``` or ```x.min()```
+- ```find_max = torch.max(x)``` or ```x.max()```
+- ```find_mean = torch.mean(x)``` or ```x.mean()``` <br>
+  **NOTE** The torch.mean() function requires a tensor of float32 datatype to work <br>
+
+- ```find_sum = torch.sum(x)``` or ```x.sum()```
+
+### **To find the positional min and max**
+- ```tensor.argmin()``` will find the position in tensor that has the minimum value with ```argmin()```, this return
+the index position of the target tensor where the minimum value occurs
+- ```tensor.argmax()``` will find the position in tensor that has the maximum value with ```argmax()```, this return
+the index position of the target tensor where the maximum value occurs <br>
+**NOTE** this is useful when we use the softmax activation function
+
+### **Reshaping, stacking, squeezeing and unsqueezing Tensor (Shape and Dimention Tensor Munipulating)**
+- **Reshaping** : reshapes an input tensor to a defined shape
+- **View** : Return a view of an input tensor of certain shape but keep the same memory as the original tensor
+- **Stacking** : combine multiple tensors on top of each other(vstack) or side by side (hstack)
+- **Squeeze**: removes all 1 dimentions from a tensor
+- **Unsqueeze**: add a 1 dimention to a target tensor
+- **Permute**: Return a view of the input with dimensions permuted (swapped) in a certain way
 
 
 
