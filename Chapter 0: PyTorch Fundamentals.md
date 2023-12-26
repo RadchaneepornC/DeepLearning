@@ -202,12 +202,12 @@ by identify size of tensor as [height, width, color channels(R,G,B)]
 
 A [torch.dtype](https://pytorch.org/docs/stable/tensor_attributes.html) is an object that represents the data type of a tensor, Pytorch has 12 different data type 
 
-### **Create a range of tensor **
+### **Create a range of tensor**
 ```torch.arange(start, end+1)```
 
 ```torch.arange(start = 1, end = 11, step =1)```
 
-one_to_ten = torch.arange(1 , 11)
+```one_to_ten = torch.arange(1 , 11)```
 
 ### **Create a range of tensor-like**
 tensor_like is use for creating a tensor with the size same as other specufy tensor
@@ -216,6 +216,44 @@ tensor_like is use for creating a tensor with the size same as other specufy ten
 
 the ten_zeros tensor will have the same size as one_to_ten tensor
 
+### **Dealing with Tensor datatypes, Device, Shape**
+
+**big errors you'll run into with Pytorch & Deep Learning:**
+      - Tensors not right datatype
+      - Tensors not right shape
+      - Tensors not on the right device
+
+**1. Datatype**
+1. Float 32 tensor is the default tensor datatypes, even though we specify dtype = None, the dtype still be torch.float32
+
+```float_32_tensor = torch.tensor([3.0, 6.0, 9.0], **dtype = None** , device = None, requires_grad = False)```
+or we can specify **dtype** we want [see list of tensor dtype](https://pytorch.org/docs/stable/tensors.html)
+
+
+- the attribute used for checking tensor datatypes
+```tensor_name.dtype```
+
+
+ **2. Device we specify when we create Tensor**
+```float_32_tensor = torch.tensor([3.0, 6.0, 9.0], dtype = None, **device = None** , requires_grad = False)```
+
+we can set device for specifying what device is our tensor on
+- device = None
+- device = 'cpu'
+- device = 'cuda'
+
+**NOTE** operation between two or more tensors should be in the same device
+
+3. requires_grad = False
+   requires_grad (Default: True)
+   to specify whether or not to track gradients with this tensors operation, we set True if autograd should record operations on this tensor
+
+
+
+
+
+
+  
 
 
 
