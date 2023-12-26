@@ -138,7 +138,8 @@ Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 | scalar    |```scalar = torch.tensor(7)```                                |   0       | -  |
 | vector    |```vector = torch.tensor([7,7])```                            |1       | torch.Size([2]) |
 | MATRIX    |```MATRIX = torch.tensor([[7, 8], [9, 10]])```                |   2       | torch.Size([2, 2])  |              
-| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number(if 0-dimension, tensor is a scalar, if 1-dimension, tensor is a vecor | torch.Size([1, 3, 3])  |
+| TENSOR    |```TENSOR = torch.tensor([[[1, 2, 3],[3, 6, 9],[2, 4, 4]]])```|can be any number(if 0-dimension, tensor is a scalar, if 1-dimension, tensor is a vecor
+) | torch.Size([1, 3, 3])  |
 
 **To avoid confusion**
 - in the context of PyTorch, the dimension of a tensor and the number of channels in a tensor are related but distinct concepts. **The number of channels is typically the size of _the third dimension_ in a tensor**, especially in the context of image data in CNNs.
