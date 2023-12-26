@@ -233,6 +233,9 @@ or we can specify **dtype** we want [see list of tensor dtype](https://pytorch.o
 - the attribute used for checking tensor datatypes
 ```tensor_name.dtype```
 
+- the method used for changing type of tensor datatypes, ex. converting to dtype = torch.float32
+  ```existing_tensor.type(torch.float32)```
+
 
  **2. Device we specify when we create Tensor**
 ```float_32_tensor = torch.tensor([3.0, 6.0, 9.0], dtype = None, **device = None** , requires_grad = False)```
@@ -241,12 +244,23 @@ we can set device for specifying what device is our tensor on
 - device = None
 - device = 'cpu'
 - device = 'cuda'
+  
 
 **NOTE** operation between two or more tensors should be in the same device
+- the attribute used for checking tensor device
+```tensor_name.device```
 
-3. requires_grad = False
+3. Tensor shape
+  - the attribute used for checking tensor shape
+```tensor_name.shape``` 
+   
+(addition) requires_grad = False
    requires_grad (Default: True)
    to specify whether or not to track gradients with this tensors operation, we set True if autograd should record operations on this tensor
+
+For more reading: [Precision in Computing](https://en.wikipedia.org/wiki/Precision_(computer_science))
+
+
 
 
 
