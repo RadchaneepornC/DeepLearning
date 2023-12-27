@@ -337,8 +337,25 @@ the index position of the target tensor where the maximum value occurs <br>
 
 ### **Reshaping, stacking, squeezeing and unsqueezing Tensor (Shape and Dimention Tensor Munipulating)**
 - **Reshaping** : reshapes an input tensor to a defined shape
+
+```existing_tensor.reshape(1,9)```
+
+**NOTE** 
+The Pytorch tensor can be reshaped if it has a consistency of total elements: The total number of elements in the tensor must remain the same before and after the reshape operation, this means the product of the tensor's dimensions must be the same before and after reshaping. 
+
+**For example,** a tensor of shape (4, 5) with 20 elements can be reshaped to (2, 10), (10, 2), (20,), etc., but not to (3, 7) as that would require 21 elements
+  
 - **View** : Return a view of an input tensor of certain shape but keep the same memory as the original tensor
+this attribute is quite similar to shape, but it share memory with the original tensor before viewing, this means if the viewed tensor change any element, the element in the original tensor will change follows the viewed tensors
+
+```existing_tensor.view(1,9)```
+
 - **Stacking** : combine multiple tensors on top of each other(vstack) or side by side (hstack)
+
+
+
+
+
 - **Squeeze**: removes all 1 dimentions from a tensor
 - **Unsqueeze**: add a 1 dimention to a target tensor
 - **Permute**: Return a view of the input with dimensions permuted (swapped) in a certain way
