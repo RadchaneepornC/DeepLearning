@@ -336,29 +336,90 @@ the index position of the target tensor where the maximum value occurs <br>
 **NOTE** this is useful when we use the softmax activation function
 
 ### **Reshaping, stacking, squeezeing and unsqueezing Tensor (Shape and Dimention Tensor Munipulating)**
-- **Reshaping** : reshapes an input tensor to a defined shape
+#### **Reshaping** : reshapes an input tensor to a defined shape
 
 ```existing_tensor.reshape(1,9)```
 
-**NOTE** 
+**NOTE 1** 
 The Pytorch tensor can be reshaped if it has a consistency of total elements: The total number of elements in the tensor must remain the same before and after the reshape operation, this means the product of the tensor's dimensions must be the same before and after reshaping. 
 
 **For example,** a tensor of shape (4, 5) with 20 elements can be reshaped to (2, 10), (10, 2), (20,), etc., but not to (3, 7) as that would require 21 elements
+
+**NOTE 2** <br>
+**Examples of -1 Usage in reshape** <br>
+- Creating a 1-Dimensional Tensor: <br>
+
+
+       tensor = torch.tensor([[1, 2, 3], [4, 5, 6]]) 
+       reshaped_tensor = tensor.reshape(-1)
+       reshaped_tensor will be: [1, 2, 3, 4, 5, 6]
+
+      For this, reshaped_tensor is 1-dimensional because -1 is the only value in the reshape argument
+
+ -  Reshaping to a 2-Dimensional Tensor with One Inferred Dimension:
+
+
+        tensor = torch.tensor([[1, 2, 3], [4, 5, 6]])  
+        reshaped_tensor = tensor.reshape(3, -1)
+        reshaped_tensor will be: [[1, 2], [3, 4], [5, 6]] #3x2 since 6 = 3X then x =2 and dim = 2 because there are two value as a size
+
+- Reshaping to a Higher-Dimensional Tensor:
+
+
+      tensor = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8])
+      reshaped_tensor = tensor.reshape(2, 2, -1)
+      reshaped_tensor will be: [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+      reshaped_tensor = 2x2x2 since 2x2xX= 9 then x=2 and dimension is 3
+
   
-- **View** : Return a view of an input tensor of certain shape but keep the same memory as the original tensor
+  
+#### **View** : Return a view of an input tensor of certain shape but keep the same memory as the original tensor
 this attribute is quite similar to shape, but it share memory with the original tensor before viewing, this means if the viewed tensor change any element, the element in the original tensor will change follows the viewed tensors
 
 ```existing_tensor.view(1,9)```
 
-- **Stacking** : combine multiple tensors on top of each other(vstack) or side by side (hstack)
+**NOTE**
+- view is used when you want to change the shape of a tensor and you are sure that the tensor is contiguous **in memory**. If the tensor is not contiguous, using view will result in an error.
+- contiguous refers to how the data of a tensor is stored in memory. Specifically, a tensor is considered contiguous when its elements are stored in a continuous, unbroken block of memory in the order that they are indexed
+  
+   - These examples will demonstrate how certain operations can lead to non-contiguous tensors and how to check and handle this               situation.
+     
+      **Example 1**: Creating a Non-Contiguous Tensor with Transpose
+
+           import torch
+          #Create a simple 2x3 tensor
+          tensor = torch.tensor([[1, 2, 3], [4, 5, 6]])
+
+          #Transpose the tensor
+          transposed = tensor.t()
+
+          #Check contiguity
+          print("Original tensor contiguous:", tensor.is_contiguous()) --> False
+          print("Transposed tensor contiguous:", transposed.is_contiguous()) --> True
+
+       **Example 2**: Slicing a Tensor, Slicing a tensor can also lead to a non-contiguous tensor. This is because slicing changes the           way elements are accessed in memory
+
+          # Slice the tensor
+          sliced = tensor[:, 1]
+          # Check contiguity
+          print("Original tensor contiguous:", tensor.is_contiguous()) --> True
+          print("Sliced tensor contiguous:", sliced.is_contiguous()) --> False
+
+        **NOTE** Using ```Tensor.contiguous()``` to Make a Tensor Contiguous
+
+
+
+
+#### **Stacking** : combine multiple tensors on top of each other(vstack) or side by side (hstack)
 
 
 
 
 
-- **Squeeze**: removes all 1 dimentions from a tensor
-- **Unsqueeze**: add a 1 dimention to a target tensor
-- **Permute**: Return a view of the input with dimensions permuted (swapped) in a certain way
+
+#### **Squeeze**: removes all 1 dimentions from a tensor
+#### **Unsqueeze**: add a 1 dimention to a target tensor
+#### **Permute**: Return a view of the input with dimensions permuted (swapped) in a certain way
 
 
 
