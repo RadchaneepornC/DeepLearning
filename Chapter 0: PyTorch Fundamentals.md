@@ -412,7 +412,25 @@ this attribute is quite similar to shape, but it share memory with the original 
 
 #### **Stacking** : combine multiple tensors on top of each other(vstack) or side by side (hstack)
 
+- ```torch.vstack``` stacks tensors vertically, which is equivalent to concatenation along the row, it's useful when you want to stack tensors on top of each other
+- ```torch.hstack``` stacks tensors horizontally, which means concatenation along the columns. It's useful when you want to place tensors side by side
+- These functions are particularly useful for manipulating and combining data of the **same dimensionality** in machine learning and data preprocessing tasks
+- **Example**
 
+          import torch
+
+          # Create two 2D tensors
+          tensor1 = torch.tensor([[1, 2], [3, 4]])
+          tensor2 = torch.tensor([[5, 6], [7, 8]])
+
+          # Vertically stack the tensors
+          vstacked_tensor = torch.vstack([tensor1, tensor2])
+
+         # Horizontally stack the tensors
+          hstacked_tensor = torch.hstack([tensor1, tensor2])
+
+
+ ![Tensor stack](https://github.com/RadchaneepornC/DeepLearning/blob/b719f36332b3aa3e9cbd9d8a11b9a5eff016b4da/images/stack%20example.png)
 
 
 
