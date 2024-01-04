@@ -432,12 +432,32 @@ this attribute is quite similar to shape, but it share memory with the original 
 
  ![Tensor stack](https://github.com/RadchaneepornC/DeepLearning/blob/b719f36332b3aa3e9cbd9d8a11b9a5eff016b4da/images/stack%20example.png)
 
-
-
-
 #### **Squeeze**: removes all 1 dimentions from a tensor
+
 #### **Unsqueeze**: add a 1 dimention to a target tensor
+
+
+The **squeeze and unsqueeze** operations in PyTorch are quite useful in deep learning for manipulating tensor shapes, which is a common requirement in various stages of building and training neural networks 
+
+ **Squeeze**:
+ - **Removes Single-Dimension Entries**: squeeze removes dimensions of size 1 from the tensor's shape. This is often needed after certain operations that might introduce singleton dimensions.
+- **Useful in Convolutional Neural Networks (CNNs)**: After convolutional layers and pooling layers, you might end up with tensors that have singleton dimensions. For example, a tensor might have a shape like (batch_size, num_channels, height, width, 1). The squeeze operation can be used to remove the last dimension, simplifying the tensor to (batch_size, num_channels, height, width).
+- **Batch Processing**: In scenarios where the batch size might be 1 (especially during inference), squeeze can be used to remove the batch dimension, transforming a tensor from (1, features...) to (features...).
+
+**Unsqueeze**
+- **Adds a Singleton Dimension**: unsqueeze adds a dimension of size 1 at a specified index. This is useful for shaping tensors to meet the requirements of certain layers or operations.
+- **Preparing Tensors for Batch Processing**: Deep learning models often expect inputs in a batch format, even when you're processing a single item. unsqueeze can be used to add a batch dimension to a tensor, transforming a tensor from (features...) to (1, features...).
+- **Expanding Tensor for Broadcasting**: In operations involving multiple tensors, PyTorch can automatically broadcast tensors of different shapes. Using unsqueeze to add dimensions can facilitate such broadcasting by aligning the dimensions of the tensors.
+- **Compatibility with Certain Layers**: Some layers, like certain kinds of RNNs, expect inputs with specific dimensionalities. unsqueeze can help reshape tensors to match these expectations.
+
 #### **Permute**: Return a view of the input with dimensions permuted (swapped) in a certain way
+
+
+
+
+
+
+
 
 
 
