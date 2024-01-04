@@ -8,3 +8,7 @@ See my lectures cover this tutorial topic belows :
 - [ ] Chapter 2: Neural Network Classification
 - [ ] Chapter 3: Computer Vision
 - [ ] Chapter 4: Custom Datasets
+
+
+# Learning Wish list 
+- [Transformer from Scratch with Pytorch from LUÍS FERNANDO TORRES](https://www.kaggle.com/code/lusfernandotorres/transformer-from-scratch-with-pytorch/notebook)
