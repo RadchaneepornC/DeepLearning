@@ -10,7 +10,7 @@
 
 - For a complex problem, we can not think of all the rules, so ML and DL can help
   
-**NOTE** If you can build a simple rule-based system that doesn't require machine learning to do that
+**NOTE** If we can build a simple rule-based system, it means that the system doesn't require any machine learning 
 
 **What deep learnign is good for**
 
