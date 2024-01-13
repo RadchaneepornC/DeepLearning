@@ -12,14 +12,14 @@
   
 **NOTE** If we can build a simple rule-based system, it means that the system doesn't require any machine learning 
 
-**What deep learnign is good for**
+**What deep learning is good for**
 
 - Problems with long lists of rules:  when the traditional approach fails, machine learning/deep learning may help
 - Continually changing environments: deep learning can adapt ('learn') to new scenarios
-- Discovering insight with large collections of data: it is may not easy if we trying to hand-craft rules for diffenrentiating what 101 different kinds of food
+- Discovering insight with large collections of data: it is may not easy if we trying to hand-craft rules for diffenrentiating what 101 different kinds of foods
   
-**What deep learnign is not good for**
-- When we need to explain the patterns since the patterns learned by a deep learnign model are typically uninterpretable by a human, it has a lot of numbers called weight and bias, has million, billion ofparameters(numbers or patterns in the data)
+**What deep learning is not good for**
+- When we need to explain the patterns since the patterns learned by a deep learnimg model are typically uninterpretable by a human, it has a lot of numbers called weight and bias, has million, billion of parameters (numbers or patterns in the data)
 - When the traditional approach is a better option such as a simple rule-based system
 - When errors are unacceptable since the outputs of deep learning model aren't always predictable
 - When you don't have much data: deep learning models usually require a fairly large amount of data to produce great result
@@ -37,7 +37,7 @@ for deep learning we need to turn unstructure data to have some sort of structur
 
 **Algorithm for Deep Learning (unstructure data)**
 - Neural Network (focus on building with Pytorch)
-- Fully conneted neural network (focus on building with Pytorch)
+- Fully connected neural network (focus on building with Pytorch)
 - Convolutional neural network
 - Recurrent neural network
 - Transformer
@@ -46,7 +46,7 @@ But many algorithms can be used for both depending how we represent our problem
 
 ## Neural Network and its Anatomy
 1. before unstructured data gets used with a neural network, it needs to be turned into numbers (numerical encoding or representation)
-2. then pass things through neural network (should a type that suit you problem, CNN for image, transformer for NLP & Speech for example)
+2. then pass those numbers through neural network (should a type that suit you problem, CNN for image, transformer for NLP & Speech for example)
 3. then Neural Network learn representations/patterns/features/weights from the input data
 4. got the representation outputs that human can understand
 
