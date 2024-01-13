@@ -168,7 +168,8 @@ Many neural networks learn things by starting with these following steps:
 
 ```random_tensor = torch.rand(3,3,4)```
 
-tensor([[[0.8392, 0.2026, 0.3443, 0.3889],
+
+     tensor([[[0.8392, 0.2026, 0.3443, 0.3889],
          [0.4184, 0.2061, 0.5102, 0.7971],
          [0.9066, 0.4758, 0.8494, 0.1696]],
 
@@ -179,6 +180,7 @@ tensor([[[0.8392, 0.2026, 0.3443, 0.3889],
         [[0.2144, 0.8869, 0.4258, 0.6195],
          [0.6845, 0.8133, 0.3455, 0.7764],
          [0.2148, 0.8847, 0.7957, 0.7891]]])
+
 
 
 ### Represent an image as a tensor with shape
