@@ -184,13 +184,24 @@ Many neural networks learn things by starting with these following steps:
 
 
 ### Represent an image as a tensor with shape
-by identify size of tensor as [height, width, color channels(R,G,B)] 
+by identifying size of tensor as [height, width, color channels(R,G,B)] 
 
 ![Image as tensors](https://github.com/RadchaneepornC/DeepLearning/blob/af6b52ba4c0e22f300ee8a2eabd5962a1b34e046/images/Image%20as%20tensors.png)
 
 **Example**
 
 ```random_image_size_tensor = torch.rand(size=(224, 224, 3))```
+
+-------------------------------------------------------------------------------
+🤔If you, like me, are doubtful about **order of dimensions in the tensor**🤔<br>
+💡The answers below can make it crystal clear for you❗️<br>
+
+There are two common format to order dimensions of tensor 
+- NCHW (Batch, Channel, Height, Width)
+- NHWC (Batch, Height, Width, Channel)
+
+
+-------------------------------------------------------------------------------
 
 ### **Create a tensor with all zero and one**
 - **create a tensor of all zeros**
