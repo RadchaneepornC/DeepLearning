@@ -426,12 +426,12 @@ The Pytorch tensor can be reshaped if it has a consistency of total elements: Th
       tensor = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8])
       reshaped_tensor = tensor.reshape(2, 2, -1)
       reshaped_tensor will be: [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
-      reshaped_tensor = 2x2x2 since 2x2xX= 9 then x=2 and dimension is 3
+      reshaped_tensor = 2x2x2 since 2x2xX= 8 then x=2 and dimension is 3
 
   
   
 #### **View** : Return a view of an input tensor of certain shape but keep the same memory as the original tensor
-this attribute is quite similar to shape, but it share memory with the original tensor before viewing, this means if the viewed tensor change any element, the element in the original tensor will change follows the viewed tensors
+this attribute is quite similar to shape, but it shares memory with the original tensor before viewing, this means if the viewed tensor change any element, the element in the original tensor will change follows the viewed tensors
 
 ```existing_tensor.view(1,9)```
 
@@ -439,7 +439,7 @@ this attribute is quite similar to shape, but it share memory with the original 
 - view is used when you want to change the shape of a tensor and you are sure that the tensor is contiguous **in memory**. If the tensor is not contiguous, using view will result in an error.
 - contiguous refers to how the data of a tensor is stored in memory. Specifically, a tensor is considered contiguous when its elements are stored in a continuous, unbroken block of memory in the order that they are indexed
   
-   - These examples will demonstrate how certain operations can lead to non-contiguous tensors and how to check and handle this               situation.
+   - These examples will demonstrate how certain operations can lead to non-contiguous tensors and how to check and handle this situation.
      
       **Example 1**: Creating a Non-Contiguous Tensor with Transpose
 
