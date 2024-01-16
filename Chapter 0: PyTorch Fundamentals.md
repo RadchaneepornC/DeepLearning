@@ -197,8 +197,21 @@ by identifying size of tensor as [height, width, color channels(R,G,B)]
 💡The answers below can make it crystal clear for you❗️<br>
 
 There are two common format to order dimensions of tensor 
-- NCHW (Batch, Channel, Height, Width)
-- NHWC (Batch, Height, Width, Channel)
+- **NCHW** (Batch, Channel, Height, Width)
+  N: Number of images in a batch.
+  C: Number of channels in the image (e.g., 3 for RGB, 1 for grayscale).
+  H: Height of the image.
+  W: Width of the image.
+
+**Ex** Suppose you have a batch of 10 color images (RGB), each of which is 28 pixels high and 28 pixels wide. 
+
+> In PyTorch, this batch would be represented as a 4-dimensional tensor with the shape (10, 3, 28, 28):
+
+
+
+
+  
+- **NHWC** (Batch, Height, Width, Channel)
 
 
 -------------------------------------------------------------------------------
