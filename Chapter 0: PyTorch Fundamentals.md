@@ -117,7 +117,13 @@ Pytorch tensors are created using
 ```
 torch.tensor()
 ```
-torch.Tensor is an alias for the default tensor type torch.FloatTensor (32-bit floating point for CPU tensor)
+- torch.Tensor is an alias for the default tensor type torch.FloatTensor (32-bit floating point for CPU tensor)
+
+- A tensor of specific data type can be constructed by passing a ```torch.dtype``` and/or a ```torch.device``` to a constructor or tensor creation op
+
+          torch.ones([2, 4], dtype=torch.float64, device=cuda0)
+
+
 
 Firstly, Let's explore about Scalar, Vector, Matrix, and followed by Tensor
 
@@ -227,6 +233,21 @@ There are two common format to order dimensions of tensor
 ```tensor_name.dtype```
 
 A [torch.dtype](https://pytorch.org/docs/stable/tensor_attributes.html) is an object that represents the data type of a tensor, Pytorch has 12 different data type 
+- **torch.float32** (or torch.float): This is the default data type for floating-point numbers. It's used commonly for most computations <br>
+> to know more about change number to [float32 type representative](https://www.youtube.com/watch?v=8afbTaA-gOQ) 
+- **torch.float64** (or torch.double): This data type provides double precision floating-point numbers
+- **torch.float16** (or torch.half): It provides half precision floating-point numbers, which are useful for reducing memory usage and improving performance on some GPUs
+- **torch.int8**: This type represents signed 8-bit integers
+- **torch.uint8**: It represents unsigned 8-bit integers
+- **torch.int16** (or torch.short): This type is for signed 16-bit integers
+- **torch.int32** (or torch.int): This data type represents signed 32-bit integers
+- **torch.int64** (or torch.long): This type is used for signed 64-bit integers. It's often used for indexing tensors
+- **torch.bool**: This type represents Boolean values (True or False)
+- **torch.complex64**: This type is used for complex numbers with float32 real and imaginary parts
+- **torch.complex128** (or torch.cdouble): This type is for complex numbers with float64 real and imaginary parts
+- **torch.bfloat16:** This is a 16-bit data type used for floating-point numbers, offering higher precision than float16, especially in the range critical for deep learning
+- **other four quantized data types** 
+
 
 ### **Create a range of tensor**
 ```torch.arange(start, end+step, step =1)```
@@ -244,12 +265,18 @@ tensor_like is use for creating a tensor with the size same as other specufy ten
 
 the ten_zeros tensor will have the same size as one_to_ten tensor
 
+          input = torch.empty(2, 3)
+          torch.zeros_like(input)
+  >tensor([[ 0.,  0.,  0.],<br>
+               [ 0.,  0.,  0.]])
+
 ### **Dealing with Tensor datatypes, Device, Shape**
 
-**big errors you'll run into with Pytorch & Deep Learning:**
-      - Tensors not right datatype
-      - Tensors not right shape
-      - Tensors not on the right device
+**big errors you'll run into with Pytorch & Deep Learning:** <br>
+
+- Tensors not right datatype
+- Tensors not right shape
+- Tensors not on the right device
 
 **1. Datatype**
 1. Float 32 tensor is the default tensor datatypes, even though we specify dtype = None, the dtype still be torch.float32
@@ -278,17 +305,17 @@ we can set device for specifying what device is our tensor on
 - the attribute used for checking tensor device
 ```tensor_name.device```
 
-3. Tensor shape
+**3. Tensor shape**
   - the attribute used for checking tensor shape
 ```tensor_name.shape``` 
    
-(addition) requires_grad = False
-   requires_grad (Default: True)
+(addition) requires_grad = False <br>
+   requires_grad (Default: True) <br>
    to specify whether or not to track gradients with this tensors operation, we set True if autograd should record operations on this tensor
 
 For more reading: [Precision in Computing](https://en.wikipedia.org/wiki/Precision_(computer_science))
 
- **Manipulating Tensor (Tensor Operations)**
+ ### **Manipulating Tensor (Tensor Operations)**
 
 For neural network, it has a lot of mathematic operations that Pytorch run behide the scence for us
 **Tensor operations include:**
@@ -301,35 +328,39 @@ or
 - **Substraction**
   ```created_tensor - 10```
 
-- **Division** <br>
+- **Multification** <br>
 
-**This is two main ways of performimg multification in neural networks and deep learning:**
+**These are two main ways of performimg multification in neural networks and deep learning:**
 
- import numpy as np
+ 
 
 **Define the matrices**
-A = np.array([[1, 2], [3, 4]])
-B = np.array([[5, 6], [7, 8]])
+
+      import numpy as np
+      A = np.array([[1, 2], [3, 4]])
+      B = np.array([[5, 6], [7, 8]])
   
-  - **Multiplication (element-wise)**
+- **Multiplication (element-wise)**
 
 
 ```created_tensor * 10```
 or 
 ```torch.mul(created_tensor, 10)```
 
-element_wise_product = A * B
+      element_wise_product = A * B
 
-array([[ 5, 12],
-        [21, 32]])
+      array([[ 5, 12],
+              [21, 32]])
 
 
-- **Matrix (Dot-product) multiplication**
-dot_product =       
- array([[19, 22],
-        [43, 50]]))
+  - **Matrix (Dot-product) multiplication**
 
-  ```torch.matmul(tensor,tensor)``` or  ```torch.mm(tensor,tensor)`` or ```tensor @ tensor```
+             dot_product =       
+             array([[19, 22],
+                  [43, 50]]))
+
+  ```torch.matmul(tensor,tensor)``` or  ```torch.mm(tensor,tensor)``` or 
+  ```tensor @ tensor```
 
 **NOTE**
 The inner dimensions must match so that the matrix multiplication can perform and the resulting matrix has the shape of the outer dimensions
