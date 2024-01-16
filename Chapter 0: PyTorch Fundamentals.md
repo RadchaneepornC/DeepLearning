@@ -441,7 +441,8 @@ this attribute is quite similar to shape, but it shares memory with the original
   
    - These examples will demonstrate how certain operations can lead to non-contiguous tensors and how to check and handle this situation.
      
-      **Example 1**: Creating a Non-Contiguous Tensor with Transpose
+      **Example 1**: Creating a Non-Contiguous Tensor with Transpose <br>
+ Transposing a tensor often results in a non-contiguous tensor because the operation  changes the memory layout without actually moving the data in memory
 
            import torch
           #Create a simple 2x3 tensor
@@ -451,8 +452,8 @@ this attribute is quite similar to shape, but it shares memory with the original
           transposed = tensor.t()
 
           #Check contiguity
-          print("Original tensor contiguous:", tensor.is_contiguous()) --> False
-          print("Transposed tensor contiguous:", transposed.is_contiguous()) --> True
+          print("Original tensor contiguous:", tensor.is_contiguous()) --> True
+          print("Transposed tensor contiguous:", transposed.is_contiguous()) --> False
 
        **Example 2**: Slicing a Tensor, Slicing a tensor can also lead to a non-contiguous tensor. This is because slicing changes the           way elements are accessed in memory
 
@@ -467,7 +468,7 @@ this attribute is quite similar to shape, but it shares memory with the original
 
 
 
-#### **Stacking** : combine multiple tensors on top of each other(vstack) or side by side (hstack)
+#### **Stacking** : combine multiple tensors on top of each other (vstack) or side by side (hstack)
 
 - ```torch.vstack``` stacks tensors vertically, which is equivalent to concatenation along the row, it's useful when you want to stack tensors on top of each other
 - ```torch.hstack``` stacks tensors horizontally, which means concatenation along the columns. It's useful when you want to place tensors side by side
@@ -491,8 +492,58 @@ this attribute is quite similar to shape, but it shares memory with the original
 
 #### **Squeeze**: removes all 1 dimentions from a tensor
 
+            torch.squeeze(input, dim=None)
+            input = (A×1×B)
+            squeeze(input, 0) #tensor unchanged
+            squeeze(input, 1) #tensor shape becomes (A×B)
+
+When dim is given, a squeeze operation is done only in the given dimension(s).
+
+             x = torch.zeros(2, 1, 2, 1, 2)
+             x.size()  
+             
+  > torch.Size([2, 1, 2, 1, 2])
+
+             y = torch.squeeze(x)
+             y.size()  
+
+  > torch.Size([2, 2, 2])
+
+             y = torch.squeeze(x, 0)
+             y.size()
+
+  > torch.Size([2, 1, 2, 1, 2])
+
+             y = torch.squeeze(x, 1)
+             y.size()
+             
+  >torch.Size([2, 2, 1, 2])
+
+             y = torch.squeeze(x, (1, 2, 3))
+             
+  >torch.Size([2, 2, 2])
+
+
 #### **Unsqueeze**: add a 1 dimention to a target tensor
 
+          x = torch.tensor([1, 2, 3, 4])
+          x, x.size(), x.ndim
+
+> (tensor([1, 2, 3, 4]), torch.Size([4])), 1)
+
+          x1 = torch.unsqueeze(x, 0) #same as torch.unsqueeze(x, -2)
+          x1, x1.size(), x.size(), x1.ndim
+          
+> (tensor([[1, 2, 3, 4]]), torch.Size([1, 4]), torch.Size([4]), 2)
+
+          x2 = torch.unsqueeze(x, 1) #same as torch.unsqueeze(x, -1)
+          x2, x2.size(), x2.ndim
+
+> (tensor([[1],
+         [2],
+         [3],
+         [4]]),
+ torch.Size([4, 1]),2)
 
 The **squeeze and unsqueeze** operations in PyTorch are quite useful in deep learning for manipulating tensor shapes, which is a common requirement in various stages of building and training neural networks 
 
@@ -507,12 +558,31 @@ The **squeeze and unsqueeze** operations in PyTorch are quite useful in deep lea
 - **Expanding Tensor for Broadcasting**: In operations involving multiple tensors, PyTorch can automatically broadcast tensors of different shapes. Using unsqueeze to add dimensions can facilitate such broadcasting by aligning the dimensions of the tensors.
 - **Compatibility with Certain Layers**: Some layers, like certain kinds of RNNs, expect inputs with specific dimensionalities. unsqueeze can help reshape tensors to match these expectations.
 
-#### **Permute**: Return a view of the input with dimensions permuted (swapped) in a certain way
+#### **Permute**: Rearrange the dimensions of a target tensor in a specified order <br>
+It is essential for preparing data for models, making tensors compatible with different neural network architectures, and aligning data to the expectations of various deep learning frameworks.
+
+          x = torch.randn(2, 3, 5)
+          x.size()
+          
+> torch.Size([2, 3, 5])
+
+        torch.permute(x, (2, 0, 1)).size()  #shifts axis 0-->1, 1-->2, 2-->0
+
+> torch.Size([5, 2, 3]) 
 
 
+**Scenario of using torch.permute**
 
+- **Rearranging Tensor Dimensions**:
+if you have a tensor with shape (batch_size, height, width, channels) and you need it in the format (batch_size, channels, height, width), you can use permute to rearrange the dimensions
 
+- **Data Preprocessing**
+In case of an image data might be in the format (height, width, channels), but convolutional neural networks (CNNs) in PyTorch usually expect the format (channels, height, width). permute is used to reorder these dimensions
 
+- **Compatibility with Different Deep Learning Frameworks**
+Different deep learning frameworks might expect data in different formats. When moving data between frameworks, or when using models trained in different frameworks, permute is used to align the tensor formats
+
+- **Time Series and Sequence Data**: In the context of recurrent neural networks (RNNs) and other sequence models, sometimes it's necessary to rearrange the dimensions of the input tensor, for example, from (batch_size, seq_len, features) to (seq_len, batch_size, features)
 
 
 
