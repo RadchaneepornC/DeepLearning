@@ -610,11 +610,31 @@ Then when we specify the index of data from the tensor in each dimention that yo
         tensor_name[index_in_1st_dimention, index_in_2nd_dimention, index_in_3rd_dimention]
 
 **NOTE**
+1. This type of indexing can preserve  the original number of dimensions or when you need to select specific elements across multiple dimensions simultaneously
+2. Advanced indexing is generally more efficient and faster, especially for large tensors, because it avoids the creation of intermediate tensors
+3. In deep learning and data manipulation, advanced indexing is commonly used for tasks like selecting specific channels from an image tensor, rearranging tensor dimensions, or batch-wise operations
+
 
 - **II) Use Separate Indexing Operations approach** (x[:][:][:])
 
           tensor_name[index in 1st dimension][index in 2nd dimension][index in 3rd dimension]
+  
 **NOTE**
+
+1. This like accessing a row or a layer of a tensor. It’s intuitive when you're dealing with nested structures
+2. If you're iterating over dimensions or elements where each step depends on the result of the previous one, separate indexing might be more suitable
+3. If you want to access elements in a way that would reduce the dimensionality of the tensor and that reduction is desired, then using separate indexing can be appropriate
+
+**Example**
+     
+      x = torch.arange(1,10).reshape(1,3,3)
+      x, x.shape, x.ndim
+
+> (tensor([[[1, 2, 3], <br>
+          [4, 5, 6],   <br>
+          [7, 8, 9]]]),<br>
+ torch.Size([1, 3, 3]),3)
+
 
 - Index the outmost bracket (dimension 0)
 
