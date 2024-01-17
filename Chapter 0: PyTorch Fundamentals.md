@@ -665,9 +665,62 @@ Then when we specify the index of data from the tensor in each dimention that yo
   
   > (tensor(5), torch.Size([]), 0)
 
+### **PyTorch Tensors and NumPy**
+PyTorch is often used for building and training machine learning models, while NumPy is great for general mathematical operations. Sometimes, you need to switch your data from the PyTorch format to the NumPy format to do certain tasks
+
+- To change Data in **NumPy array -->  Pytorch tensor**
+
+            torch.from_numpy(ndarray)
+ 
+**NOTE**
+1. The returned tensor and ndarray share the same memory. Modifications to the tensor will be reflected in the ndarray and vice versa. The returned tensor is not resizable.
+
+2. Tensor created from ```torch.from_numpy(ndarray)``` have dtype = torch.float64 as a default, but the tensor created from ```torch.tensor``` have dtype = torch.float32 as a default, for this we can specify the dtype of the tensor created from numpy by using
+
+                  torch.from_numpy(ndarray).type(torch.float32)
+
+4. It currently accepts ndarray with dtypes of following below
+     numpy.float64, numpy.float32, numpy.float16, numpy.complex64, numpy.complex128,     numpy.int64, numpy.int32, numpy.int16, numpy.int8, numpy.uint8, and numpy.bool.
+
+**Example**
+
+            import torch
+            import numpy as np
+            array = np.arange(1.0,8.0)
+            tensor = torch.from_numpy(array)
+            array, tensor
+
+> (array([1., 2., 3., 4., 5., 6., 7.]),
+ tensor([1., 2., 3., 4., 5., 6., 7.], dtype=torch.float64))
+
+- To change Data in **Pytorch tensor -->  NumPy array**
+
+          torch.Tensor.numpy(*, force=False)
+
+**NOTE**
+1. **Parameters:**
+force (bool) – if True, the ndarray may be a copy of the tensor instead of always sharing memory, defaults to False.
+
+2. The numpy we got from  ```torch.Tensor.numpy()``` follows dtype of torch.Tensor which is float32
+
+3. The returned tensor and ndarray don't share the same memory, the numpy don't change the value follow the tensor they create from
+    
+**Example**
+
+            import torch
+            tensor = torch.ones(7)
+            numpy_from_tensor = tensor.numpy()
+            tensor, numpy_from_tensor
+
+> (tensor([1., 1., 1., 1., 1., 1., 1.]),
+ array([1., 1., 1., 1., 1., 1., 1.], dtype=float32))
 
 
+## Reproducbility 
 
+In short how a neural network learns:
+
+`start with random numbers - 
 
   
 
