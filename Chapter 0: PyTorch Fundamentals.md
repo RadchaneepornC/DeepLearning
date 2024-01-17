@@ -561,6 +561,8 @@ The **squeeze and unsqueeze** operations in PyTorch are quite useful in deep lea
 #### **Permute**: Rearrange the dimensions of a target tensor in a specified order <br>
 It is essential for preparing data for models, making tensors compatible with different neural network architectures, and aligning data to the expectations of various deep learning frameworks.
 
+```torch.permute``` returns a view of the original tensor input with its dimensions permuted, the view in Pytorch share the memory with the original tensor, this means if the original tensor value is change, the value in the permuted tensor also change
+
           x = torch.randn(2, 3, 5)
           x.size()
           
@@ -570,6 +572,7 @@ It is essential for preparing data for models, making tensors compatible with di
 
 > torch.Size([5, 2, 3]) 
 
+**NOTE** 
 
 **Scenario of using torch.permute**
 
@@ -584,6 +587,53 @@ Different deep learning frameworks might expect data in different formats. When 
 
 - **Time Series and Sequence Data**: In the context of recurrent neural networks (RNNs) and other sequence models, sometimes it's necessary to rearrange the dimensions of the input tensor, for example, from (batch_size, seq_len, features) to (seq_len, batch_size, features)
 
+### **Selecting data from tensors (indexing)**
+Indexing in PyTorch (select the data from tensor) is similar to indexing in NumPy (select the data from array)
+
+      x = torch.arange(1,10).reshape(1,3,3)
+      x, x.shape, x.ndim
+
+> (tensor([[[1, 2, 3], <br>
+          [4, 5, 6],   <br>
+          [7, 8, 9]]]),<br>
+ torch.Size([1, 3, 3]),3)
+
+As you can see above,  Size of this tensor is [1,3,3] which stands for below in the context of 3D tensors
+
+- [**1**, 3, 3]: This is the size of the first dimension, we can think of this as the number of 'blocks' or 'layers' in the tensor, or it could represent the batch size if this is the batch data, or sometimes can represent the color channel
+- [1, **3**, 3]: the size of the second dimension, which can be thought of as the number of rows in each block/layer of the tensor
+- [1, 3, **3**]:  the size of the third dimension, akin to the number of columns in each row within each block/layer of the tensor
+
+Then when we specify the index of data from the tensor in each dimention that you want, it is like
+- **I) Use Advanced Indexing approach** (x[:, :, :])
+
+        tensor[index_in_1st_dimention, index_in_2nd_dimention, index_in_3rd_dimention]
+
+**NOTE**
+
+- **II) Use Separate Indexing Operations approach** (x[:][:][:])
+
+          x[index in 1st dimension][index in 2nd dimension][index in 3rd dimension]
+**NOTE**
+
+- Index the outmost bracket (dimension 0)
+
+            x[0]
+
+  > tensor([[1, 2, 3],<br>
+        [4, 5, 6], <br>
+        [7, 8, 9]])
+
+- Index on the middle bracket (dimension 1)
+
+          x[0][0]
+
+  > tensor([1, 2, 3])
+
+- Index on the most inner bracket (last dimension)
+
+         x[0][0][0], x[0][1][1]
+  > (tensor(1), tensor(5))
 
 
 
