@@ -607,13 +607,13 @@ As you can see above,  Size of this tensor is [1,3,3] which stands for below in 
 Then when we specify the index of data from the tensor in each dimention that you want, it is like
 - **I) Use Advanced Indexing approach** (x[:, :, :])
 
-        tensor[index_in_1st_dimention, index_in_2nd_dimention, index_in_3rd_dimention]
+        tensor_name[index_in_1st_dimention, index_in_2nd_dimention, index_in_3rd_dimention]
 
 **NOTE**
 
 - **II) Use Separate Indexing Operations approach** (x[:][:][:])
 
-          x[index in 1st dimension][index in 2nd dimension][index in 3rd dimension]
+          tensor_name[index in 1st dimension][index in 2nd dimension][index in 3rd dimension]
 **NOTE**
 
 - Index the outmost bracket (dimension 0)
