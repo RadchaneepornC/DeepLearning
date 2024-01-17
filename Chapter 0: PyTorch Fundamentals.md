@@ -635,25 +635,35 @@ Then when we specify the index of data from the tensor in each dimention that yo
           [7, 8, 9]]]),<br>
  torch.Size([1, 3, 3]),3)
 
+- Get all values of 0th and 1th dimensions, but only index 1 of 2nd dimention
+
+        x_adv = x[:,:,1]
+        x_adv, x_adv.size(), x_adv.ndim
+
+  > (tensor([[2, 5, 8]]), torch.Size([1, 3]), 2)
 
 - Index the outmost bracket (dimension 0)
 
-            x[0]
+            x0= x[0], x0.size(), x0.ndim
 
   > tensor([[1, 2, 3],<br>
         [4, 5, 6], <br>
-        [7, 8, 9]])
+        [7, 8, 9]]) <br>
+    torch.Size([3, 3]),2)
 
 - Index on the middle bracket (dimension 1)
 
-          x[0][0]
+         x1 = x[0][1]
+         x1, x1.size(), x1.ndim
 
-  > tensor([1, 2, 3])
+  > (tensor([4, 5, 6]), torch.Size([3]), 1)
 
 - Index on the most inner bracket (last dimension)
 
-         x[0][0][0], x[0][1][1]
-  > (tensor(1), tensor(5))
+         x2 = x[0][1][1]
+         x2, x2.size(), x2.ndim
+  
+  > (tensor(5), torch.Size([]), 0)
 
 
 
