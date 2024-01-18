@@ -827,3 +827,39 @@ for 2,3 require [Pytorch setup](https://pytorch.org/get-started/locally/)
   torch.cuda.device_count()
 ```
 
+### Putting tensors (and models) on the GPU
+in order to obtain the results in faster computations
+
+```python
+  #setup device code
+  import torch
+  device = "cuda" if torch.cuda.is_available() else "cpu"
+  device 
+
+  #create a tensor(default on the CPU)
+  tensor = torch.tensor([1,2,3])
+  print(tensor,tensor.device) #tensor([1, 2, 3]) cpu is returned
+
+  #move tensor to GPU(if available)
+  tensor_on_gpu = tensor.to(device)
+  tensor_on_gpu #tensor([1, 2, 3], device='cuda:0') is returned
+
+```
+
+### Moving tensors back to the CPU
+If the tensor is on GPU, we can't transform it to Numpy
+
+```python
+
+  tensor_on_gpu.numpy() #TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first
+
+```
+
+- To fix the GPU tensor with Numpy issue, we can first set it to the CPU
+  ```python
+    tensor_back_on_cpu = tensor_on_gpu.cpu()
+    tensor_back_on_cpu, tensor_back_on_cpu.device #(tensor([1, 2, 3]), device(type='cpu'))
+
+  ```
+
+
