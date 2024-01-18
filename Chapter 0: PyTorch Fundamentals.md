@@ -856,9 +856,9 @@ If the tensor is on GPU, we can't transform it to Numpy
 ```
 
 - To fix the GPU tensor with Numpy issue, we can first set it to the CPU
-  ```python
-    tensor_back_on_cpu = tensor_on_gpu.cpu()
-    tensor_back_on_cpu, tensor_back_on_cpu.device #(tensor([1, 2, 3]), device(type='cpu'))
+```python
+  tensor_back_on_cpu = tensor_on_gpu.cpu()
+  tensor_back_on_cpu, tensor_back_on_cpu.device #(tensor([1, 2, 3]), device(type='cpu'))
 
   ```
 
