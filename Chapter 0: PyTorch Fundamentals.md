@@ -720,9 +720,12 @@ force (bool) – if True, the ndarray may be a copy of the tensor instead of alw
 
 In short how a neural network learns:
 
-`start with random numbers - 
-
-  
-
+```mermaid
+flowchart LR
+    A(Random numbers) --> B(Tensor operations)
+    B --> C(Update random numbers to try and make them better representation of the data)
+    C --> B
+```
+   
 
 
