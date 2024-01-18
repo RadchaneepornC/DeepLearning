@@ -798,8 +798,32 @@ GPUs = faster computation on numbers, thanks to CUDA + NVIDIA hardware + Pytorch
 
 for 2,3 require [Pytorch setup](https://pytorch.org/get-started/locally/)
 
+### to check the GPUs
 
+```python
 
-   
+!nvidia-smi
 
+```
+
+### to check the GPU access with Pytorch
+
+  ```python
+
+    import torch
+    torch.cuda.is_available()
+
+  ```
+
+### setup device agnostic code
+
+```python
+  device = "cuda" if torch.cuda.is_available() else "cpu"
+  device 
+```
+### count the number of devices
+
+```python
+  torch.cuda.device_count()
+```
 
