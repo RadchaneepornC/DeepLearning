@@ -716,7 +716,7 @@ force (bool) – if True, the ndarray may be a copy of the tensor instead of alw
  array([1., 1., 1., 1., 1., 1., 1.], dtype=float32))
 
 
-## Reproducbility 
+## Reproducibility 
 
 In short how a neural network learns:
 
@@ -726,6 +726,80 @@ flowchart LR
     B --> C(Update random numbers to try and make them better representation of the data)
     C --> B
 ```
+
+So, we need to reduce randomness in neural network with Pytorch **random seed** concept
+
+By using a seed, we can ensure that your experiments are reproducible, meaning that we or anyone else can replicate the exact results at a later time although it has the random number generator (our friend can got the same number with us, when they run the experiment again)
+
+### Setting the Seed
+In PyTorch, we set the seed using ```torch.manual_seed(seed_value)```, we may also want to set the seed for the CUDA backend (if we're using a GPU) for further consistency in results across different devices
+
+```python
+import torch
+
+# Set the seed for generating random numbers
+seed_value = 42
+torch.manual_seed(seed_value)
+
+# If using a CUDA-enabled GPU, you should also set the seed for it
+if torch.cuda.is_available():
+    torch.cuda.manual_seed(seed_value)
+    torch.cuda.manual_seed_all(seed_value)  # if using multi-GPU.
+```
+
+### Example: Random Tensor Generation
+
+remind you to set the seed everytime we need to generate random numbers
+
+```python
+# Generate a random tensor
+random_tensor = torch.rand(2, 3)
+print(random_tensor)
+
+# Reset the seed and generate the tensor again
+torch.manual_seed(seed_value)
+random_tensor_again = torch.rand(2, 3)
+print(random_tensor_again)
+
+# The tensors will be the same(if True nothing happens, if False AssertionError occurs)
+assert torch.equal(random_tensor, random_tensor_again)
+```
+
+### Example: Random Split of a Dataset
+When splitting datasets into training and testing sets or during k-fold cross-validation, setting a random seed ensures that the split is the same every time the code is run
+
+```python
+from torch.utils.data import random_split
+
+# Dummy dataset
+dataset = torch.arange(10)
+
+# Set the seed and split the dataset
+torch.manual_seed(seed_value)
+train_set, val_set = random_split(dataset, [8, 2])
+print(train_set.indices)  # Output will be the same every time
+
+# Reset the seed and split the dataset again
+torch.manual_seed(seed_value)
+train_set_again, val_set_again = random_split(dataset, [8, 2])
+print(train_set_again.indices)  # Will be the same as above
+
+# The splits will be the same
+assert train_set.indices == train_set_again.indices
+```
+
+## Running Tensors and Pytorch objects on the GPUs 
+
+GPUs = faster computation on numbers, thanks to CUDA + NVIDIA hardware + Pytorch working behind the scence to make faster computition
+
+1. Easiest - Use Google Colab (both free and upgraded GPU)
+2. Our Own GPU
+3. Cloud computing - Google Cloud Platform (GCP), AWS, Azure, these services allow us to rent computers on the cloud and access them
+
+for 2,3 require [Pytorch setup](https://pytorch.org/get-started/locally/)
+
+
+
    
 
 
