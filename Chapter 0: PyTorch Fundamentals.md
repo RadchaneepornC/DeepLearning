@@ -757,13 +757,15 @@ random_tensor = torch.rand(2, 3)
 print(random_tensor)
 
 # Reset the seed and generate the tensor again
-torch.manual_seed(seed_value)
+torch.manual_seed(42)
 random_tensor_again = torch.rand(2, 3)
 print(random_tensor_again)
 
 # The tensors will be the same(if True nothing happens, if False AssertionError occurs)
 assert torch.equal(random_tensor, random_tensor_again)
 ```
+
+>AssertionError occurs, since we need to seed everytime before randomness, for this, the first time of randomness is not seeded
 
 ### Example: Random Split of a Dataset
 When splitting datasets into training and testing sets or during k-fold cross-validation, setting a random seed ensures that the split is the same every time the code is run
@@ -775,18 +777,20 @@ from torch.utils.data import random_split
 dataset = torch.arange(10)
 
 # Set the seed and split the dataset
-torch.manual_seed(seed_value)
+torch.manual_seed(42)
 train_set, val_set = random_split(dataset, [8, 2])
 print(train_set.indices)  # Output will be the same every time
 
 # Reset the seed and split the dataset again
-torch.manual_seed(seed_value)
+torch.manual_seed(42)
 train_set_again, val_set_again = random_split(dataset, [8, 2])
 print(train_set_again.indices)  # Will be the same as above
 
 # The splits will be the same
 assert train_set.indices == train_set_again.indices
 ```
+
+> no error occurs since each time of random are seeded
 
 ## Running Tensors and Pytorch objects on the GPUs 
 
