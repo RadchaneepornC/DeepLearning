@@ -12,3 +12,6 @@ My lectures covering this tutorial topic are listed below :
 
 ## Learning Wish list 
 - [Transformer from Scratch with Pytorch from LUÍS FERNANDO TORRES](https://www.kaggle.com/code/lusfernandotorres/transformer-from-scratch-with-pytorch/notebook)
+
+## Other resource of learning
+[Aman.AI's lecture](https://aman.ai)
