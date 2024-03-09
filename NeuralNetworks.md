@@ -18,6 +18,27 @@ As we have already known from BIAS-VARIANCE TRADEOFF that the larger model, the 
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/DoubleDescentProblem.png)
 
-[OpenAI](https://openai.com/blog/deep-double-descent/) is first group where talk about DOUBLE DESCENT,as shown on the picture above, at significant large of model, the error will go down, not follow the classical statistical theory, so the way that the significant large model doesn't become overfit since it has [INDUCTIVE BIAS](http://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf), a set of assumption that the algorithm used to generalize to new inputs
+[OpenAI](https://openai.com/blog/deep-double-descent/) is first group where talk about DOUBLE DESCENT,as shown on the picture above, at significant large of model, the error will go down, not follow the classical statistical theory, so the way that the significant large model doesn't become overfit since it has [INDUCTIVE BIAS](http://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf), a set of assumption that the algorithm used to generalize to new inputs into deep learning model 
+
+## Fully connected networks(FNN)
+
+### Neuron
+### Non-linearity
+### Softmax layer
+### Cross Entropy
+### MSE
+### Regularization
+### BackPropagation
+### Non-Linearity and Gradients
+### Initialization
+### Learning Rate and Scheduling
+### Beyond SGD
+### Monitoring overfitting 
+   - Dropout
+   - Batchnorm
+## CNN, RNN, LSTM, GRU
+
+
+
 
 
