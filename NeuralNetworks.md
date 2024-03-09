@@ -92,7 +92,8 @@ $W^T \cdot X$, in neuron is the dot product or it is like projection in PCA, so 
 Below are types of non-linearity function for stacking on layers of neural network architecture
   
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/non-linear.png)
-   
+
+[picture reference](https://www.v7labs.com/blog/neural-networks-activation-functions)
    - **Sigmoid** or **Logistic function**: [0,1]
 
       $\sigma(x) = \frac{1}{1 + e^{-x}}$
@@ -114,12 +115,10 @@ Below are types of non-linearity function for stacking on layers of neural netwo
      
      - Swish, Mish, GELU
        
-
-
-
-
-
 ### Softmax layer
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SoftMax.png)
+
 
 ## DNN training
 optimize loss
