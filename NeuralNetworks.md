@@ -30,15 +30,18 @@ FNN: networks created by neuron conneced to each others
 [picture reference](https://cs231n.github.io/neural-networks-1/)
 
 Neuron: this concept mimics neuron in the human brainhaving the process of receiving signals from one place and sent out to another place,for analogy, we receive inputs(x) and multiply by weights then plus with bias, now become linear regression, then push into activation function(Non-linear)since it has study found that response of neuron signal is not the linear relationship
-- if activation function is logistic function, so, one neuron network is linear regression + logistic regression ---> logistic regression
+- **if activation function is logistic function, so, one neuron network is linear regression + logistic regression ---> logistic regression**
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/CombineNeuron.png)
 
+- **the more number of neuron, the more complex of function**
 
+- **Terminology**
 
+- **Projections and Neural Network weight**
 
+$W^T \cdot X$, in neuron is the dot product or it is like projection in PCA, so 1 neuron is one eigen vector, if 2 neurons: project of matrix with 2 eigen vectors at the same time and add matrix with 2 data points
 
-- the more number of neuron, the more complex of function 
 
 
 ### Non-linearity
