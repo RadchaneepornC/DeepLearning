@@ -21,10 +21,32 @@ As we have already known from BIAS-VARIANCE TRADEOFF that the larger model, the 
 [OpenAI](https://openai.com/blog/deep-double-descent/) is first group where talk about DOUBLE DESCENT,as shown on the picture above, at significant large of model, the error will go down, not follow the classical statistical theory, so the way that the significant large model doesn't become overfit since it has [INDUCTIVE BIAS](http://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf), a set of assumption that the algorithm used to generalize to new inputs into deep learning model 
 
 ## Fully connected networks(FNN)
-
+fragment of function
+FNN: networks created by neuron conneced to each others
 ### Neuron
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Neuron.png)
+
+[picture reference](https://cs231n.github.io/neural-networks-1/)
+
+Neuron: this concept mimics neuron in the human brainhaving the process of receiving signals from one place and sent out to another place,for analogy, we receive inputs(x) and multiply by weights then plus with bias, now become linear regression, then push into activation function(Non-linear)since it has study found that response of neuron signal is not the linear relationship
+- if activation function is logistic function, so, one neuron network is linear regression + logistic regression ---> logistic regression
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/CombineNeuron.png)
+
+
+
+
+
+- the more number of neuron, the more complex of function 
+
+
 ### Non-linearity
 ### Softmax layer
+
+## DNN training
+optimize loss
+
 ### Cross Entropy
 ### MSE
 ### Regularization
@@ -36,7 +58,9 @@ As we have already known from BIAS-VARIANCE TRADEOFF that the larger model, the 
 ### Monitoring overfitting 
    - Dropout
    - Batchnorm
+
 ## CNN, RNN, LSTM, GRU
+other fragments
 
 
 
