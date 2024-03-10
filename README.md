@@ -1,5 +1,4 @@
-# DeepLearning
-Recenly, I am learning about **Pytorch for Deep Learning** from [Daniel Bourke](https://youtu.be/Z_ikDlimN6A?si=JYUbk7jNR2Gfw1zn)
+# **Pytorch for Deep Learning** from [Daniel Bourke](https://youtu.be/Z_ikDlimN6A?si=JYUbk7jNR2Gfw1zn)
 
 My lectures covering this tutorial topic are listed below :
 
@@ -9,6 +8,8 @@ My lectures covering this tutorial topic are listed below :
 - [ ] Chapter 3: Computer Vision
 - [ ] Chapter 4: Custom Datasets
 
+# CU's Pattern Recognition lecture
+- [Neural Network](https://github.com/RadchaneepornC/DeepLearning/blob/main/NeuralNetworks.md)
 
 ## Learning Wish list 
 - [Transformer from Scratch with Pytorch from LUÍS FERNANDO TORRES](https://www.kaggle.com/code/lusfernandotorres/transformer-from-scratch-with-pytorch/notebook)
