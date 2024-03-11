@@ -1,5 +1,7 @@
 # DNNs (Deep Neural Networks)🧠
-## Introduction
+<ul><details>
+<summary> Introduction</summary>
+
 **Q:** Why Deep Learning becomes popular today ? <br>
 
 **A:** 
@@ -7,8 +9,10 @@
 - Big Data: DNN can take advantage of large amounts of data
 - GPU: enable training bigger models possible
 - Deep: Easier to avoid bad local minima when the model is large
+</details></ul>
 
-## Double Descent & Inductive bias
+<ul><details>
+<summary> Double Descent & Inductive bias</summary>
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Bias-Variance-Tradeoff.png)
 [picture reference](https://www.cs.cornell.edu/courses/cs4780/2017sp/lectures/lecturenote11.html)<br>
@@ -19,10 +23,15 @@ As we have already known from BIAS-VARIANCE TRADEOFF that the larger model, the 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/DoubleDescentProblem.png)
 
 [OpenAI](https://openai.com/blog/deep-double-descent/) is first group where talk about DOUBLE DESCENT,as shown on the picture above, at significant large of model, the error will go down, not follow the classical statistical theory, so the way that the significant large model doesn't become overfit since it has [INDUCTIVE BIAS](http://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf), a set of assumption that the algorithm used to generalize to new inputs into deep learning model 
+</details></ul>
 
-## Fully connected networks(FNN)
+<ul><details>
+<summary>Fully connected networks(FNN)</summary>
+
 fragment of function
 FNN: networks created by neuron conneced to each others
+
+
 ### Neuron
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Neuron.png)
@@ -119,15 +128,21 @@ Below are types of non-linearity function for stacking on layers of neural netwo
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SoftMax.png)
 
+</ul></details>
+  
+<ul><details>
+<summary>DNN training</summary>
 
-## DNN training
-optimize loss
+  
+  optimize loss
 ### Objective function(loss function)
 This function can be any function that summarizes the performance into a single number
 #### Cross Entropy 
 - used for softmax outputs(probabilities), or classification problems
 
-$$ L = - \sum_{i=1}^{n} y_i \log q_n(x, \theta) $$
+
+
+$$L = - \sum_{i=1}^{n} y_i \log q_n(x, \theta)$$
 
 Where:
 - $L$ : the cross-entropy loss
@@ -163,7 +178,7 @@ Cross Entropy usually lead model to answer 1,this can be solved by [label smooth
 
 #### MSE
 used for regression problems
-
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/MSE.png)
 - **L1 vs L2 loss**
   - L1 robust to outliers
   - L2 easier to optimize (smooth gradient) since they can diff
@@ -172,9 +187,6 @@ used for regression problems
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SmoothedL1.png)
 [picture reference](https://www.researchgate.net/publication/321180616_Wing_Loss_for_Robust_Facial_Landmark_Localisation_with_Convolutional_Neural_Networks)
-
-
-
 
 ### Regularization
 
@@ -191,10 +203,12 @@ used for regression problems
 ### Monitoring overfitting 
    - Dropout
    - Batchnorm
+</ul></details>
 
-## CNN, RNN, LSTM, GRU
+<ul><details>
+<summary>CNN, RNN, LSTM, GRU</summary>
 other fragments
-
+</details></ul>
 
 
 
