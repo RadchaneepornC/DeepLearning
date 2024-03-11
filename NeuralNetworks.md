@@ -188,7 +188,21 @@ used for regression problems
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SmoothedL1.png)
 [picture reference](https://www.researchgate.net/publication/321180616_Wing_Loss_for_Robust_Facial_Landmark_Localisation_with_Convolutional_Neural_Networks)
 
+**Cons of MSE**
+this value cost the loss from underestimate equal to overestimate, this problem can be solved by asymetric loss(Quantile loss - L1, Huber loss - smoothed L1)
+
 ### Regularization
+
+Decrease overfitting in the model, it is trading model bias to model variance
+
+there are two main approach to regularize neural networks
+
+- Explicit regularization: Deals with loss function (put slack in SVM)
+- Implicit regularization: Deals with the network, add more irregular layers in deep learning
+
+**Famous types of regularization**
+
+
 
 ### BackPropagation
 
