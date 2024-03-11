@@ -122,15 +122,60 @@ Below are types of non-linearity function for stacking on layers of neural netwo
 
 ## DNN training
 optimize loss
+### Objective function(loss function)
+This function can be any function that summarizes the performance into a single number
+#### Cross Entropy 
+- used for softmax outputs(probabilities), or classification problems
 
-### Cross Entropy
-### MSE
+$$ L = - \sum_{i=1}^{n} y_i \log q_n(x, \theta) $$
+
+Where:
+- $L$ : the cross-entropy loss
+- $n$ : the number of samples or data points
+- $y_i$ : the true label or true probability associated with the the $i$ th sample (1 if data x comes from class n, 0 otherwise)
+- $q_n(x, \theta)$ : the predicted probability distribution or output of the model $q$ parameterized by $\theta$ for the input $x$(Probability just go out the softmax function)
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/CrossEntropyLoss.jpg)
+
+Log loss is the other names used for calling Cross Entropy loss, as you can see in the below picture, if we take log to the likelihood eq. of logistic regression(lowest eq.), we will obtain Cross Entropy loss for Binary class eq.
+(Actually, these three term are the same, Entropy, Cross Entropy, KL Divergence, further studying [here](https://www.youtube.com/watch?v=ErfnhcEV1O8))
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/CrossEntropy%26LogarithmLoss.png)
+
+**Cons of Cross Entropy Loss**
+It assumes every mistakes have equally mistake, this indicate that this value does not suit for kinds of problems having different cost to pay for each error<br>
+
+**Ex** If the probabilities of Class0: Perfect, Class1: Good, Class 2: Average, Class3:Bad, 
+
+- $y_i$ is [1, 0, 0, 0]
+- **model A** got the $q_n(x, \theta)$: [0.4, 0.2, 0.1, 0.3]
+- **model B** got the $q_n(x, \theta)$: [0.4, 0.3, 0.0, 0.3]
+
+both model A and B got the same Cross Entropy Loss value, which is -log(0.4) though model B a bit better than model A since the score of Good (almost Perfect)from B is higher than A, so, solution for this CONs can be solved with [Squared EMD loss](https://arxiv.org/abs/1611.05916)
+
+**Ex** Different direction of accuracy and loss(the better loss but worse accuracy)
+
+- Groundtruth [1,0,0]
+  - **Model A** [0.4, 0.3, 0.3], Model B [0.45, 0.5, 0.05]
+  - **Model B** got the lower loss since the Probalility for correct class is higher, but model B incorrectly predict (it predict class 2 because of highest accuracy), this can be solved by monitoring accuracy as well as loss
+
+**Ex** Leads to overconfidence
+Cross Entropy usually lead model to answer 1,this can be solved by [label smoothing](https://paperswithcode.com/method/label-smoothing), [calibration](https://paperswithcode.com/method/label-smoothing)
+
+#### MSE
+used for regression problems
+
 ### Regularization
+
 ### BackPropagation
+
 ### Non-Linearity and Gradients
+
 ### Initialization
+
 ### Learning Rate and Scheduling
+
 ### Beyond SGD
+
 ### Monitoring overfitting 
    - Dropout
    - Batchnorm
