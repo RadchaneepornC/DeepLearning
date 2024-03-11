@@ -164,6 +164,18 @@ Cross Entropy usually lead model to answer 1,this can be solved by [label smooth
 #### MSE
 used for regression problems
 
+- **L1 vs L2 loss**
+  - L1 robust to outliers
+  - L2 easier to optimize (smooth gradient) since they can diff
+  - Smoothed L1 combination of L1 and L2
+    for part of less than 1 will work like L2, and part of more than 1 will work like L1
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SmoothedL1.png)
+[picture reference](https://www.researchgate.net/publication/321180616_Wing_Loss_for_Robust_Facial_Landmark_Localisation_with_Convolutional_Neural_Networks)
+
+
+
+
 ### Regularization
 
 ### BackPropagation
