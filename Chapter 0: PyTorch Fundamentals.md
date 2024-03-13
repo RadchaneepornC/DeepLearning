@@ -159,6 +159,9 @@ See about tensor dimensions belows
 
 ![Tensor Dimensions](https://github.com/RadchaneepornC/DeepLearning/blob/d7d903a15f26b211071bb8bbd32dbff1dc86312f/images/tensor%20dimension%20example.png)
 
+- the first number of dimension represents # of channels
+- the second number of dimention represents # of rows
+- the third number of dimention represents # of columns
 
 ### **Random tensors**
 Many neural networks learn things by starting with these following steps:
