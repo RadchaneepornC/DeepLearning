@@ -202,11 +202,14 @@ there are two main approach to regularize neural networks
 
 **Famous types of regularization**
 
-
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/TypeofRegulization.png)
 
 ### BackPropagation
 
+
+
 ### Non-Linearity and Gradients
+
 
 ### Initialization
 
