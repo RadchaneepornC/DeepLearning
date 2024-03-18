@@ -31,8 +31,9 @@ As we have already known from BIAS-VARIANCE TRADEOFF that the larger model, the 
 fragment of function
 FNN: networks created by neuron conneced to each others
 
+### Dense/ Fully connected
 
-### Neuron
+#### 1. Neuron
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Neuron.png)
 
@@ -46,6 +47,8 @@ Neuron: this concept mimics neuron in the human brainhaving the process of recei
 
 - **Terminology**
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Terminology.png)
+
+
   - **Input layer:** scaling inputs to have to be scaled to have zero mean & unit variance(z-score normalization) or scaling them to a specific range, such as [0, 1] or [-1, 1], normalization helps in improving the stability and convergence of optimization algorithms, making the learning process more efficient, below are normalization from scratch
 
     ```python
@@ -97,6 +100,14 @@ $W^T \cdot X$, in neuron is the dot product or it is like projection in PCA, so 
   this is why GPU is requirement because GPUs contain thousands of cores that can perform computations simultaneously, allowing them to process many operations in parallel, compute operations in parallel for each neuron of that layer for this case.
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/ComputationalGraph.png)
 
+
+### Softmax
+
+this layer used for change logit to probability 
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SoftMax.png)
+
+
 ### Non-linearity(Activation function)
 Below are types of non-linearity function for stacking on layers of neural network architecture
   
@@ -124,9 +135,6 @@ Below are types of non-linearity function for stacking on layers of neural netwo
      
      - Swish, Mish, GELU
        
-### Softmax layer
-
-![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SoftMax.png)
 
 </ul></details>
   
@@ -137,7 +145,7 @@ Below are types of non-linearity function for stacking on layers of neural netwo
   optimize loss
 ### Objective function(loss function)
 This function can be any function that summarizes the performance into a single number
-#### Cross Entropy 
+#### 1. Cross Entropy 
 - used for softmax outputs(probabilities), or classification problems
 
 
@@ -176,7 +184,7 @@ both model A and B got the same Cross Entropy Loss value, which is -log(0.4) tho
 **Ex** Leads to overconfidence
 Cross Entropy usually lead model to answer 1,this can be solved by [label smoothing](https://paperswithcode.com/method/label-smoothing), [calibration](https://paperswithcode.com/method/label-smoothing)
 
-#### MSE
+#### 2. MSE
 used for regression problems
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/MSE.png)
 - **L1 vs L2 loss**
@@ -191,6 +199,12 @@ used for regression problems
 **Cons of MSE**
 this value cost the loss from underestimate equal to overestimate, this problem can be solved by asymetric loss(Quantile loss - L1, Huber loss - smoothed L1)
 
+### Training loss vs Validation loss
+
+
+
+
+
 ### Regularization
 
 Decrease overfitting in the model, it is trading model bias to model variance
@@ -204,7 +218,7 @@ there are two main approach to regularize neural networks
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/TypeofRegulization.png)
 
-### BackPropagation
+### BackPropagation (autograd)
 
 
 
@@ -216,6 +230,8 @@ there are two main approach to regularize neural networks
 ### Learning Rate and Scheduling
 
 ### Beyond SGD
+  - Adam
+  - AdamW
 
 ### Monitoring overfitting 
    - Dropout
@@ -224,7 +240,21 @@ there are two main approach to regularize neural networks
 
 <ul><details>
 <summary>CNN, RNN, LSTM, GRU</summary>
-other fragments
+
+### CNN, Pooling
+
+### RNN
+
+### GRU
+
+### LSTM
+
+### Embedding
+
+
+
+
+
 </details></ul>
 
 
