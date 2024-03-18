@@ -109,6 +109,9 @@ this layer used for change logit to probability
 
 
 ### Non-linearity(Activation function)
+
+This layer makes we can stack each layer for connecting to neural network
+
 Below are types of non-linearity function for stacking on layers of neural network architecture
   
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/non-linear.png)
@@ -147,8 +150,6 @@ Below are types of non-linearity function for stacking on layers of neural netwo
 This function can be any function that summarizes the performance into a single number
 #### 1. Cross Entropy 
 - used for softmax outputs(probabilities), or classification problems
-
-
 
 $$L = - \sum_{i=1}^{n} y_i \log q_n(x, \theta)$$
 
@@ -201,8 +202,8 @@ this value cost the loss from underestimate equal to overestimate, this problem 
 
 ### Training loss vs Validation loss
 
-
-
+- Training loss: for optimizatiom
+- Validation loss: for checking overfitting
 
 
 ### Regularization
@@ -211,16 +212,22 @@ Decrease overfitting in the model, it is trading model bias to model variance
 
 there are two main approach to regularize neural networks
 
-- Explicit regularization: Deals with loss function (put slack in SVM)
-- Implicit regularization: Deals with the network, add more irregular layers in deep learning
+#### 1. Explicit regularization: Deals with loss function (put slack in SVM)
+#### 2. Implicit regularization: Deals with the network, add more irregular layers in deep learning
 
 **Famous types of regularization**
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/TypeofRegulization.png)
 
-### BackPropagation (autograd)
+**Dropout**: regularization helping model distribute risks, don't lies too much in some neuron <br>
+**Batchnorm**: regularization learning mean and variance in each minibatch to change hidden representation follow each batch
 
+### Optimizers
 
+#### 1. BackPropagation (autograd)
+ways to optimize loss, calculate numerical gradient through forward and backward algorithm
+
+#### 2. SGD, Adam, AdamW
 
 ### Non-Linearity and Gradients
 
@@ -228,28 +235,29 @@ there are two main approach to regularize neural networks
 ### Initialization
 
 ### Learning Rate and Scheduling
+used with optimizer, can have warm up
 
-### Beyond SGD
-  - Adam
-  - AdamW
 
-### Monitoring overfitting 
-   - Dropout
-   - Batchnorm
 </ul></details>
 
 <ul><details>
 <summary>CNN, RNN, LSTM, GRU</summary>
 
 ### CNN, Pooling
+for solve shift invariant & shift equivalent problems
 
 ### RNN
 
-### GRU
+RNN models that can remember past things are GPU and LSTM, this suits for time-series and time axis data
 
-### LSTM
+#### 1. GRU
+
+
+#### 2. LSTM
+
 
 ### Embedding
+things change sparse representation to dense representation for better capturing meaning for catagorical feature
 
 
 
