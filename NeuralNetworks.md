@@ -1,4 +1,7 @@
 # DNNs (Deep Neural Networks)🧠
+
+## Layers
+
 <ul><details>
 <summary> Introduction</summary>
 
@@ -32,6 +35,8 @@ fragment of function
 FNN: networks created by neuron conneced to each others
 
 ### Dense/ Fully connected
+
+No inductive bias, f(WX)
 
 #### 1. Neuron
 
@@ -219,8 +224,15 @@ there are two main approach to regularize neural networks
 
 ![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/TypeofRegulization.png)
 
-**Dropout**: regularization helping model distribute risks, don't lies too much in some neuron <br>
-**Batchnorm**: regularization learning mean and variance in each minibatch to change hidden representation follow each batch
+**Dropout**: regularization helping model distribute risks, don't lies too much in some neuron, close some neuron to tease neural network to not sent data via only some neuron, for increasing overfitting <br>
+
+**Batch Norms**: regularization learning mean and variance in each minibatch to change hidden representation follow each batch
+
+**Layer Norms** (most popular, nowadays)
+
+**Group Norms**
+
+**Instance Norms**
 
 ### Optimizers
 
@@ -245,26 +257,41 @@ used with optimizer, can have warm up
 
 ### CNN, Pooling
 for solve shift invariant & shift equivalent problems
+f(WX) that are moved follow convolution, inductive bias is local structure/ pattern that we want WX shift invariant no matter how input moved, can memory in the kernel level
 
 ### RNN
 
-RNN models that can remember past things are GPU and LSTM, this suits for time-series and time axis data
+RNN models that can remember past things are GPU and LSTM, this suits for time-series and time relationship data
 
 #### 1. GRU
+can memory ~ 100 steps
 
 
 #### 2. LSTM
 
 
+### Attention
+match **Q**eury with the **K**ey then bring **V**alue of that key to response
+
+- Self-Attention : $O(n^2)$
+  
+
+
 ### Embedding
 things change sparse representation to dense representation for better capturing meaning for catagorical feature
 
-
-
-
-
 </details></ul>
 
+## Architecture/ Blocks/ Connections
 
+<ul><details>
+<summary>Transformer</summary>
+</details></ul>
+<ul><details>
+<summary>Residual connection</summary>
+</details></ul>
+<ul><details>
+<summary>Depthwise separable convolution</summary>
+</details></ul>
 
 
