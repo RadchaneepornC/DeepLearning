@@ -255,6 +255,10 @@ used with optimizer, can have warm up
 <ul><details>
 <summary>CNN, RNN, LSTM, GRU</summary>
 
+### Embedding
+things change sparse representation to dense representation for better capturing meaning for catagorical feature
+
+
 ### CNN, Pooling
 for solve shift invariant & shift equivalent problems
 f(WX) that are moved follow convolution, inductive bias is local structure/ pattern that we want WX shift invariant no matter how input moved, can memory in the kernel level
@@ -275,10 +279,6 @@ match **Q**eury with the **K**ey then bring **V**alue of that key to response
 
 - Self-Attention : $O(n^2)$
   
-
-
-### Embedding
-things change sparse representation to dense representation for better capturing meaning for catagorical feature
 
 </details></ul>
 
