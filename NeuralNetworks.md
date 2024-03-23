@@ -263,6 +263,10 @@ things change sparse representation to dense representation for better capturing
 for solve shift invariant & shift equivalent problems
 f(WX) that are moved follow convolution, inductive bias is local structure/ pattern that we want WX shift invariant no matter how input moved, can memory in the kernel level
 
+- **Maxpool**: give us **shift invariance** and expand **receptive filed**
+- **De-convolution (Upsampling)**
+
+
 ### RNN
 
 RNN models that can remember past things are GPU and LSTM, this suits for time-series and time relationship data
