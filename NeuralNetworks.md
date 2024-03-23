@@ -264,7 +264,8 @@ for solve shift invariant & shift equivalent problems
 f(WX) that are moved follow convolution, inductive bias is local structure/ pattern that we want WX shift invariant no matter how input moved, can memory in the kernel level
 
 - **Maxpool**: give us **shift invariance** and expand **receptive filed**
-- **De-convolution (Upsampling)**
+- **De-convolution (Upsampling)** : filter size should be a multiple of the stride to avoid checkerboard artifacts
+- **Unpooling + Conv**
 
 
 ### RNN
