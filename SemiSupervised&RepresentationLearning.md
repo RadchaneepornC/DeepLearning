@@ -48,16 +48,38 @@ Some labels known
 
 <ul><details>
 <summary> Representation Learning </summary>
-        <ul><details>
-        <summary> Transfer Learning </summary>
-        </details></ul>
-        <ul><details>
-        <summary> Self-supervised learning </summary>
+        
+ ## **Finding a magical function f()**  
+
+###  use a supervised model and extract hidden values from the network <br>
+    
+**Drawbacks**: need labelled data
+
+### use unsupervised (Autoencoder)
+
+the concept is encoding itself then decoding itself, after that train network with L2 loss calculated from input and output as picture shown below
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/Autoencoder.png)
+
+**There are many ways to help with a supervised task e.g. recognition**
+
+- Append the input with the code from the encoder
+- Stick a classifier on top of the encode (can even be a linear classifier-liner probe)
+- Used for pretaining a network <br>
+  
+
+
+<ul><details>
+    <summary> Transfer Learning </summary>
+
+- The concept of transfer learning is utilizing the trained network captured good representation to initialize a new network for a different tasks
+- The way we take the networks trained on a different domain for a different source task to adapt it to our domain for our target tasks called **fine-tune**
+        
+</details></ul>
+<ul><details>
+<summary> Self-supervised learning </summary>
         Surrogate task from pseudo labels
-        </details></ul>
+  </details></ul>
 
 
-
-
-
-</ul></details>
+  </ul></details>
