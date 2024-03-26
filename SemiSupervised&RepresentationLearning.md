@@ -69,16 +69,25 @@ the concept is encoding itself then decoding itself, after that train network wi
   
 
 
+
 <ul><details>
     <summary> Transfer Learning </summary>
-
+  
 - The concept of transfer learning is utilizing the trained network captured good representation to initialize a new network for a different tasks
 - The way we take the networks trained on a different domain for a different source task to adapt it to our domain for our target tasks called **fine-tune**
         
 </details></ul>
 <ul><details>
 <summary> Self-supervised learning </summary>
-        Surrogate task from pseudo labels
+<br>      
+Surrogate task from pseudo labels<br>
+
+the concept is 
+- adding noise and want the model to answer the same answer
+- unsupervised data use consistency concept, learn by supervised loss
+
+
+  
   </details></ul>
 
 
