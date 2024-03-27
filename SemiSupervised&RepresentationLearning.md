@@ -98,11 +98,40 @@ Disclaimer: multiple communities working on similar concepts but different names
 
 - **Consistency training**
 
-use data to predict something obtained loss, and bring the same data pass the augmentation process to get the loss, we want these two loss having the same(consistency) because it comes from the same data
+Use data to predict something obtained loss, and bring the same data pass the augmentation process to get the loss, we want these two loss having the same(consistency) because it comes from the same data, in the other words: "things same in the input, should same in the output" 
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/ConsistencyTraining.png)
+
+
+- **Contrastive training**
+Get rid of different things 
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/ContrastiveTraining.png)
+
+
+### Deep face verification
+
+#### 1. use **PCA**
+#### 2. [Recently] use **Contrastive Learning** to make a function(neural network) that change face image to vector
+
+- **Triplet loss(2015)**:
+Want eucidian distance between Positive and Anchor less than distance between Negative and Anchor, because we want to minimize the triplet loss that calculate from this formula and the larger negative diff term, the smaller the triple loss
+
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/TripletLoss.png)
+
+- **NCE (Noise constastive estimation) loss(2015)**
+  <br>
+
+> Max LogP(data) - Log P(noise or negative samples)
+
+**Ex** If the data is "This is a pen"
+
+we want **P(pen) > P(pencil)**, this is the same as concept used to train word embedding such as Word2Vec, too many classes in the softmax output
 
 
 
- 
 
 </ul></details>
+
+
 
