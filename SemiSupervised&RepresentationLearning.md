@@ -10,7 +10,7 @@ As there are several types of supervision as listed below
   - Self-supervised learning: surrogate task from pseudo labels
 - **Reinforcement learning** : Agent gathers data, reward function known
 
-So, this note will focus on Semi-supervised and Representation learning types
+So, this note will focus on Semi-supervised and Representation learning, and self-supervised types
     
 ## Semi-supervised and Representation learning
 
@@ -77,18 +77,32 @@ the concept is encoding itself then decoding itself, after that train network wi
 - The way we take the networks trained on a different domain for a different source task to adapt it to our domain for our target tasks called **fine-tune**
         
 </details></ul>
+</ul></details>
+
+##  Self-supervised learning
 <ul><details>
 <summary> Self-supervised learning </summary>
-<br>      
+Some labels known
+
 Surrogate task from pseudo labels<br>
 
 the concept is 
 - adding noise and want the model to answer the same answer
 - unsupervised data use consistency concept, learn by supervised loss
 
+**GPT** is one of self-supervised learning that train to predict next word
 
-  
-  </details></ul>
+ ### Contrastive Learning 
+
+Disclaimer: multiple communities working on similar concepts but different names
+
+- **Consistency training**
+
+use data to predict something obtained loss, and bring the same data pass the augmentation process to get the loss, we want these two loss having the same(consistency) because it comes from the same data
 
 
-  </ul></details>
+
+ 
+
+</ul></details>
+
