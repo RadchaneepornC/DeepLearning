@@ -137,7 +137,7 @@ we want **P(pen) > P(pencil)**, this is the same as concept used to train word e
 
 - **Soft Nearest Neighbor Loss(2019)**
     - can have more than positive sample in minibatch
-![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SoftNearestNeighborLoss.png)
+![Alt text](images/SoftNearestNeighborLoss.png)
 
 
 - **Angular Margin/ Consine distance** Aspect
