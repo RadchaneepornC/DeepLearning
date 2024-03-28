@@ -111,7 +111,7 @@ Get rid of different things
 
 ### Deep face verification
 
-#### 1. use **PCA**
+#### 1. calculate a similarity score based on compact image representation using a PCA / Fisher projection
 #### 2. [Recently] use **Contrastive Learning** to make a function(neural network) that change face image to vector
 
 - **Triplet loss(2015)**:
