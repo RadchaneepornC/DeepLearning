@@ -122,13 +122,38 @@ Want eucidian distance between Positive and Anchor less than distance between Ne
 - **NCE (Noise constastive estimation) loss(2015)**
   <br>
 
+  Random negative sample to calculate
 > Max LogP(data) - Log P(noise or negative samples)
 
 **Ex** If the data is "This is a pen"
 
 we want **P(pen) > P(pencil)**, this is the same as concept used to train word embedding such as Word2Vec, too many classes in the softmax output
 
+- **InfoNCE (2018)** 
+    - conduct a softmax with an amount of minibatch, it is quite similar to N-pair loss (2016)
+    - use a softmax-like function to keep positive together and push negative away
 
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/InfoNCE.png)
+
+- **Soft Nearest Neighbor Loss(2019)**
+    - can have more than positive sample in minibatch
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/SoftNearestNeighborLoss.png)
+
+
+- **Angular Margin/ Consine distance** Aspect
+
+
+- **Centor loss(2016)**
+
+![ALt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/CenterLoss.png)
+ 
+**Key details to make Contrastive Learning work**
+
+1. Large batch size make this technique works since the more negative sample, the more precise of direction
+2. Temperature need to be tuned, normally value more than 1
+3. Hard/semi-hard negative mining is matters (Hard negative means the sample that really close to positive), the harder negative, the better model is trained
+4. Augmentation on the anchor and positive (consistency training)
+5. Other improvement includes - adding classification loss (CE/softmax loss)
 
 
 </ul></details>
