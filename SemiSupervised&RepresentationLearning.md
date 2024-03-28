@@ -146,6 +146,8 @@ we want **P(pen) > P(pencil)**, this is the same as concept used to train word e
 - **Centor loss(2016)**
 
 ![ALt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/CenterLoss.png)
+
+- **Arc face (2018)**
  
 **Key details to make Contrastive Learning work**
 
