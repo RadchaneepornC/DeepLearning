@@ -157,6 +157,16 @@ we want **P(pen) > P(pencil)**, this is the same as concept used to train word e
 4. Augmentation on the anchor and positive (consistency training)
 5. Other improvement includes - adding classification loss (CE/softmax loss)
 
+**tutorials and resource for futher reading about contrative learning**
+
+- [Contrastive Loss Pretraining: In-depth explanation](https://www.kaggle.com/code/moeinshariatnia/contrastive-loss-pretraining-in-depth-explanation)
+- [SimCLR](https://www.kaggle.com/code/aritrag/simclr)
+- [Tutorial 17: Self-Supervised Contrastive Learning with SimCLR](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial17/SimCLR.html)
+- [Understanding Contrastive Learning](https://towardsdatascience.com/understanding-contrastive-learning-d5b19fd96607)
+- [[Pytorch] Supervised Contrastive Learning](https://www.kaggle.com/code/debarshichanda/pytorch-supervised-contrastive-learning)
+- [Contrastive Representation Learning](https://lilianweng.github.io/posts/2021-05-31-contrastive/)
+- []()
+
 
 </ul></details>
 
