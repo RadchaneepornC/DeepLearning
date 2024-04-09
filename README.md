@@ -11,6 +11,7 @@ My lectures covering this tutorial topic are listed below :
 # CU's Pattern Recognition lecture
 - [Neural Network](https://github.com/RadchaneepornC/DeepLearning/blob/main/NeuralNetworks.md)
 - [Semi-Supervised and Representation Learning](https://github.com/RadchaneepornC/DeepLearning/blob/main/SemiSupervised%26RepresentationLearning.md)
+- [Deep Generative Model](https://github.com/RadchaneepornC/DeepLearning/blob/main/DeepGenerativeModel.md)
 
 ## Learning Wish list 
 - [Transformer from Scratch with Pytorch from LUÍS FERNANDO TORRES](https://www.kaggle.com/code/lusfernandotorres/transformer-from-scratch-with-pytorch/notebook)
