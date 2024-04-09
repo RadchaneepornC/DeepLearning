@@ -11,12 +11,12 @@ Let's deep dive through some types of Deep Generative Model as below
 
 This is the use of method of maximum likelihood  using approximate density (ELBO) and use variational to approximate ELBO
 
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/VAE.png)
 
 
 
 
-
-Ref: https://arxiv.org/pdf/1701.00160.pdf
+Ref of picture: https://arxiv.org/pdf/1701.00160.pdf
 
 **Original and by-product motivations**
 
@@ -35,6 +35,9 @@ and bring that number to decode, as the picture below
 
 ## GAN
 
+![Alt text](https://github.com/RadchaneepornC/DeepLearning/blob/main/images/GAN.png)
+
+Ref of picture: https://arxiv.org/pdf/1701.00160.pdf
 
 
 
