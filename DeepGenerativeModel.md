@@ -4,9 +4,19 @@
   - This generates X from P(X|Y) or a parametric distribution, while Y is the controlling parameter
 - This type of model is different from Discrimative models in which they learn from (P(Y|X))
 
+Deep generative models that can learn via the principle of maximim likeli- hood differ with respect to how they represent or approximate the likelihood
 Let's deep dive through some types of Deep Generative Model as below
 
 ## Variational Autoencoder (VAE)
+
+This is the use of method of maximum likelihood  using approximate density (ELBO) and use variational to approximate ELBO
+
+
+
+
+
+
+Ref: https://arxiv.org/pdf/1701.00160.pdf
 
 **Original and by-product motivations**
 
