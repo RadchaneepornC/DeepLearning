@@ -39,8 +39,13 @@ and bring that number to decode, as the picture below
 
 Ref of picture: https://arxiv.org/pdf/1701.00160.pdf
 
+## Flow-based model
+minimize the negative log-likelihood
+
 
 
 ## Diffusion model
 
-## Flow-based model
+
+
+
