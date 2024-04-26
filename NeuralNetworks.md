@@ -312,5 +312,40 @@ match **Q**eury with the **K**ey then bring **V**alue of that key to response
 
 <ul><details>
 <summary>DataLoader</summary>
+
+  ### Custom DataLoader
+[reference](https://youtu.be/zN49HdDxHi8?si=udXPayXl_QmR7k5q)
+  ```python
+
+from torch.utils.data import Dataset, DataLoader #Write a custom dataset class
+
+class DatasetName(Dataset): #Subclass torch.utils.data.Dataset
+
+    def __init__(self):
+    #Download, Read data, etc.
+
+    def __len__(self):
+    #Return the data length(total number of samples)
+
+      return
+
+    def __getitem__(self, index):
+    #Return one item on the index (one sample of data, data and label(X,y)
+
+      return
+
+dataset = DatasetName()
+train_loader = DataLoader(dataset = dataset,
+                          batch_size = 32,
+                          shuffle = True,
+                          num_workers = 2)
+
+```
+
+
+  
+
+
+  
 </details></ul>
 
