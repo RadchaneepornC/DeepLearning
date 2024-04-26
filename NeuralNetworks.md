@@ -299,4 +299,18 @@ match **Q**eury with the **K**ey then bring **V**alue of that key to response
 <summary>Depthwise separable convolution</summary>
 </details></ul>
 
+# Neural network terminology 🧠
+
+- one **epoch** : one forward & one backward pass of all training examples
+- **batch size**: the number of training examples in one forward/backward pass, the higher batch size, the more memory space you'll need
+- **iteration (steps)**: number of passes(one forward pass and one backward pass), each pass using <batch size> number of examples
+
+> Example: if we have 1000 training examples, and our batch size is 500, then it will take 2 iterations to complete 1 epoch<br>
+[Reference](https://stackoverflow.com/questions/4752626/epoch-vs-iteration-when-training-neural-networks)
+
+## Link NN to Pytorch
+
+<ul><details>
+<summary>DataLoader</summary>
+</details></ul>
 
